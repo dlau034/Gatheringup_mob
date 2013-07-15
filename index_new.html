@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+    <head>
+        <title>App Framework Kitchen Sink</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+            
+        <link rel="stylesheet" type="text/css" href="css/icons.css" />             
+        <link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
+        <link rel="stylesheet" type="text/css" href="css/styles_mob.css" title="default" />
+ 
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/main.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/appframework.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/android.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/win8.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/bb.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/ios.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/ios7.css"  /> -->
+
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/badges.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/buttons.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/lists.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/forms.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="css/src/grid.css"  /> -->
+
+      <!-- <link rel="stylesheet" type="text/css" href="plugins/css/af.actionsheet.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="plugins/css/af.popup.css"  /> -->
+      <!-- <link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  /> -->
+
+    <!-- uncomment for AppMobi apps <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script>-->
+
+        <script type="text/javascript" charset="utf-8" src="js/appframework.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/appframework.ui.js"></script>        
+
+        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+       <!-- <script>
+
+            function loadedPanel(what) {
+                //We are going to set the badge as the number of li elements inside the target
+                $.ui.updateBadge("#aflink", $("#af").find("li").length);
+            }
+
+
+            function unloadedPanel(what) {
+                console.log("unloaded " + what.id);
+            }
+
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+            }
+           
+          
+        </script> --> 
+
+
+
+
+
+             <!--  <script type="text/javascript">
+            /* This function runs once the page is loaded, but appMobi is not yet active */
+            //$.ui.animateHeaders=false;
+             var search=document.location.search.toLowerCase().replace("?","");
+             //if(!search)
+                //$.os.useOSThemes=false;
+                
+            if(search) //Android fix has too many buggy issues on iOS - can't preview with $.os.android
+            {
+
+               $.os.useOSThemes=true;
+                if(search=="win8")
+                    $.os.ie=true;
+                $.ui.ready(function(){
+                    $("#afui").get(0).className=search;
+                });
+            }
+            
+            var webRoot = "./";
+            // $.os.android=true;
+            $.ui.autoLaunch = false;
+            $.ui.openLinksNewTab = false;
+            //$.ui.resetScrollers=false;
+            
+
+            $(document).ready(function(){
+                   $.ui.launch();
+
+            });
+            
+            /* This code is used to run as soon as appMobi activates */
+            var onDeviceReady = function () {
+                AppMobi.device.setRotateOrientation("portrait");
+                AppMobi.device.setAutoRotate(false);
+                webRoot = AppMobi.webRoot + "";
+                //hide splash screen
+                AppMobi.device.hideSplashScreen();
+                $.ui.blockPageScroll(); //block the page from scrolling at the header/footer
+
+            };
+            document.addEventListener("appMobi.device.ready", onDeviceReady, false);
+
+            function showHide(obj, objToHide) {
+                var el = $("#" + objToHide)[0];
+
+                if (obj.className == "expanded") {
+                    obj.className = "collapsed";
+                } else {
+                    obj.className = "expanded";
+                }
+                $(el).toggle();
+
+            }
+
+
+            if($.os.android||$.os.ie||search=="android"){
+                $.ui.ready(function(){
+                    $("#main .list").append("<li><a id='toggleAndroidTheme'>Toggle Theme Color</a></li>");
+                    var $el=$("#afui");
+                    $("#toggleAndroidTheme").bind("click",function(e){
+                        if($el.hasClass("light"))
+                            $el.removeClass("light");
+                        else
+                            $el.addClass("light");
+                    });
+                });
+            }
+        </script> -->   
+
+<script type="text/javascript">
+    /* This function runs once the page is loaded, but appMobi is not yet active */
+    var webRoot="./";
+    $.ui.autoLaunch=false;
+    $.ui.resetScrollers=false;
+    var init = function(){
+       $.ui.backButtonText="Back";  
+       window.setTimeout(function(){$.ui.launch();},1500);
+       //$.ui.removeFooterMenu(); This would remove the bottom nav menu
+    };
+    document.addEventListener("DOMContentLoaded",init,false);  
+    $.ui.ready(function(){console.log('ready');});
+   
+    
+    
+    /* This code is used to run as soon as appMobi activates */
+    var onDeviceReady=function(){
+        AppMobi.device.setRotateOrientation("portrait");
+        AppMobi.device.setAutoRotate(false);
+        webRoot=AppMobi.webRoot+"/";
+        //hide splash screen
+        AppMobi.device.hideSplashScreen();  
+        
+    };
+    document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
+    
+</script>
+
+</head>
+    <body>
+        <div id="afui"> <!-- this is the main container div.  This way, you can have only part of your app use UI -->
+            <!-- this is the header div at the top -->
+            <div id="header">
+                <a id='menubadge' onclick='af.ui.toggleSideMenu()' class='menuButton'></a>
+            </div>
+
+            <div id="content">
+                <!-- here is where you can add your panels -->
+
+                <div title='GatheringUP' id="main" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home"  >
+
+                <!-- <div title='GatheringUP' id="main" class="panel" selected="true"> -->
+                    <h1>GatheringUP</h1>
+                    <!-- <img src="images/gu_logo.png" alt=""> -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+
+
+                    <a class="button">Home</a>
+                    <a class="button">Home</a>
+                    <a class="button">Home</a>
+                    <a class="button">Home</a>
+                </div>
+
+                <div title='Places' id="places" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home">
+
+                <!-- <div title='GatheringUP' id="main" class="panel" selected="true"> -->
+                    <h1>Places</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
+
+
+                    <a class="button">Home</a>
+                    <a class="button">Home</a>
+                    <a class="button">Home</a>
+                    <a class="button">Home</a>
+                </div>                
+
+            </div>
+            <!-- bottom navbar. Add additional tabs here -->
+            <div id="navbar">
+                <div class="horzRule"></div>
+                <a href="#main" id='navbar_home' class='icon home'>Home</a>
+                <a href="#places" id='navbar_places' class='icon home'>Places</a>
+                <a href="#Events" id='navbar_events' class='icon home'>Events</a>
+                <a href="#stories" id='navbar_stories' class='icon pencil'>Stories</a>
+            </div>
+            <!-- this is the default left side nav menu.  If you do not want any, do not include these -->
+            <nav>
+                <div class='title'>Home</div>
+                <ul class="list">
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>          
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>          
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>         
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>                                                                                                
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>          
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>          
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>         
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li> 
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>          
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>          
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>         
+                    <li >
+                        <a class="icon home mini" href="#main">Selectors</a>
+                    </li>                     
+                </ul>
+            </nav>
+        </div>
+
+        <script>
+            $.ui.setSideMenuWidth("60px"); //Set to 200px wide;
+             
+            $.ui.ready(function(){
+                $.ui.setSideMenuWidth($("#afui").width()-50);//Set it to be full width - 50 pixels
+            });
+        </script>    
+    </body>
+</html>

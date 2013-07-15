@@ -1,0 +1,113 @@
+html, body, #map {
+    height: 100%;
+}
+
+body {
+	font-family: ubuntu;
+	background-color: white;
+    padding: 0;
+    margin: 0;	
+}
+
+p {
+	font-size: 0.8em!important;
+	line-height: 15px!important;
+}
+h2 {
+	color: #333!important;
+	font-family: arvo;
+}
+#header {
+	background-color: #333!important;
+	border-bottom: none!important;
+	-webkit-box-shadow: inset 0px 2px 0px #FBB03B;
+	-moz-box-shadow: inset 0px 2px 0px #FBB03B;
+	box-shadow: inset 0px 2px 0px #FBB03B;
+}
+#navbar {
+	border-top: none!important;
+	background-color: #333!important;
+}
+.thumbnail_square {
+	width: 7em;
+	height: 7em;
+	float: left;
+	margin-right: 0.7em;
+	/*margin: 0.7em 0.7em 0em 0.7em;*/
+	
+	overflow: hidden;
+	border: 2px solid white;
+	-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+	-moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+}
+#afui .list li {
+	padding: 10px;
+}
+.featured_pg h2 {
+	padding: 0!important;
+	font-size: 16px!important;
+	margin-bottom: 2px!important;
+	width: 88%;
+	font-weight: 400!important;
+	/*background-color: red;*/
+}
+.featured_pg b {
+	margin-top: 0.5em;
+	font-size: 0.8em;
+}
+.featured_pg p {
+	margin-top: 2px!important;
+}
+.featured_pg img {
+	height: 100%;
+}
+.tag_home {
+	font-family: arvo;
+	/*background-color: #FFD321;*/
+	color: white;
+	position: absolute;
+	right: -10px;
+	/*margin-top: 8px;*/
+	padding: 0.3em 0.5em;
+	font-size: 0.85em;
+	font-weight: 400;
+	position: absolute;
+	right: 0;
+	margin-top: -10px;
+}
+.tag_story {
+	background-color: #FFD321;
+}
+.tag_event {
+	background-color: #EF4136;
+}
+.tag_place {
+	background-color: #F6921D;
+}
+
+#map { 
+	height: 100%;
+	width: 100%; 
+	z-index: 1;
+	position: fixed;
+}
+
+/* Places Page */
+/* ------------------------------------------ */
+
+.place_pg {
+	padding: 0!important;
+}
+.place_unit {
+	height: 32em;
+	background-color: #f9f9f9;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	bottom: 0;
+	margin-bottom: -2em;
+	padding: 1em;
+}
+
+
