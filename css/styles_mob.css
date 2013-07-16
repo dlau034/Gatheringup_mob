@@ -1,21 +1,25 @@
-html, body, #map {
+/* General Styles */
+/* ------------------------------------------ */
+
+html, body {
     height: 100%;
 }
-
 body {
 	font-family: ubuntu;
 	background-color: white;
     padding: 0;
     margin: 0;	
 }
-
 p {
 	font-size: 0.8em!important;
 	line-height: 15px!important;
+	margin: 0!important;
 }
 h2 {
 	color: #333!important;
 	font-family: arvo;
+	height: auto!important;
+	margin: 0!important;
 }
 #header {
 	background-color: #333!important;
@@ -28,9 +32,24 @@ h2 {
 	border-top: none!important;
 	background-color: #333!important;
 }
+.list.inset {
+	border-radius: 2px!important;
+	margin: 1em 0em!important;
+}
+.list li a:after {
+	right: 20px!important;
+}
+#defaultNav a.pressed {
+	background-color: #7AC943!important;
+	color: white!important;
+}
+
+/* Featured Home Page */
+/* ------------------------------------------ */
+
 .thumbnail_square {
-	width: 7em;
-	height: 7em;
+	width: 6em;
+	height: 6em;
 	float: left;
 	margin-right: 0.7em;
 	/*margin: 0.7em 0.7em 0em 0.7em;*/
@@ -44,12 +63,16 @@ h2 {
 #afui .list li {
 	padding: 10px;
 }
+.featured_pg li {
+	min-height: 7.5em;
+}
 .featured_pg h2 {
 	padding: 0!important;
 	font-size: 16px!important;
-	margin-bottom: 2px!important;
+	margin-bottom: 0px!important;
 	width: 88%;
 	font-weight: 400!important;
+	height: auto!important;
 	/*background-color: red;*/
 }
 .featured_pg b {
@@ -62,13 +85,16 @@ h2 {
 .featured_pg img {
 	height: 100%;
 }
+.featured_pg .list > li > a {
+	margin-right: -10px!important;
+}
+
 .tag_home {
-	font-family: arvo;
-	/*background-color: #FFD321;*/
-	color: white;
+	font-family: arvo;	
+	color: white!important;
 	position: absolute;
 	right: -10px;
-	/*margin-top: 8px;*/
+	
 	padding: 0.3em 0.5em;
 	font-size: 0.85em;
 	font-weight: 400;
@@ -86,28 +112,160 @@ h2 {
 	background-color: #F6921D;
 }
 
+/* Side Nav Main */
+/* ------------------------------------------ */
+
+#afui > #menu.tabletMenu {
+	background-color: #555!important;
+	/*border-right: 1px solid #777!important;*/
+	border-right: 1px solid #101012!important;
+}
+#afui .menuButton { 
+	/*float: left;*/
+}
+#afui #menu .list li:last-child {
+	border-color: #101012;
+}
+#afui #menu .list li {
+	border-color: #101012;
+}
+.side_nav {
+	clear: both;
+}
+.pro_dp {
+	width: 5em!important;
+	height: 5em!important;
+	border-width: 3px;
+	margin: 1em;
+}
+.pro_dp img {
+	width: 100%;
+}
+.side_nav_main h4 {
+	display: block;
+	position: relative;
+	text-align: left;
+	padding-top: 2.4em;
+	font-weight: 500;
+}
+
+/* Custom Styles */
+/* ------------------------------------------ */
+
+.btn-facebook {
+	color: #ffffff;
+	/*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/	
+	/*background: -moz-linear-gradient(top, #5b80bf 0%, #3b5a9a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5b80bf), color-stop(100%,#3b5a9a));
+	background: -webkit-linear-gradient(top, #5b80bf 0%,#3b5a9a 100%);
+	background: -o-linear-gradient(top, #5b80bf 0%,#3b5a9a 100%);
+	background: -ms-linear-gradient(top, #5b80bf 0%,#3b5a9a 100%);
+	background: linear-gradient(to bottom, #5b80bf 0%,#3b5a9a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#5b80bf&#39;, endColorstr=&#39;#3b5a9a&#39;,GradientType=0 );
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);*/
+
+	background-color: #5572A9!important;
+	border-radius: 2px !important;
+	font-family: "ubuntu";
+	font-size: 1.4em;
+	font-weight: 100!important;
+	border: none!important;
+	padding: 0.6em 1em 0.3em!important;
+	line-height: 1em;
+}
+#fb_icon {
+    background-image: url("../images/fb.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.4) inset;
+    display: block;
+    float: left;
+    height: 36px;
+    margin-left: -4px;
+    margin-right: 12px;
+    margin-top: -8px;
+    width: 24px;
+}
+/* Places Page */
+/* ------------------------------------------ */
+
 #map { 
 	height: 100%;
 	width: 100%; 
 	z-index: 1;
 	position: fixed;
 }
-
-/* Places Page */
-/* ------------------------------------------ */
-
 .place_pg {
 	padding: 0!important;
 }
 .place_unit {
-	height: 32em;
+	height: 70%;
 	background-color: #f9f9f9;
 	position: absolute;
 	z-index: 2;
 	width: 100%;
 	bottom: 0;
-	margin-bottom: -2em;
-	padding: 1em;
+	/*margin-bottom: -2em;*/
+	padding: 0.8em 1em 1em 1em;
+	border-top: 1px solid #ccc;
+	-webkit-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	-moz-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+}
+.cat_tag_mini {
+	font-size: 0.85em!important;
+	font-family: ubuntu!important;
+	font-weight: 400!important;
+	border-radius: 0;
+	padding: 3px 5px;
+	color: white;
+	background-color: #777!important;
+	white-space: nowrap;
+	line-height: 2em;
+}
+.place_unit h2 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0!important;
+	font-weight: 400!important;
+}
+.place_unit p {
+	margin-top: 1em!important;
+}
+.place_unit .thumbnail_square {
+	margin-top: -26px;
+	width: 5em;
+	height: 5em;
+}
+.place_unit .thumbnail_square img {
+	width: 100%;
 }
 
+/* Login Page */
+/* ------------------------------------------ */
+
+.login_pg {
+	font-family: arvo;
+	text-align: center;
+	font-weight: normal;
+	color: #333!important;
+	/*background-color: red!important;*/
+	background-image: url("../images/bg_park.jpg")!important;
+	background-size: 100%!important;
+}
+.login_pg .button {
+	margin-top: 15%!important;
+	color: white!important;
+}
+.login_pg img {
+	margin-top: 10%!important;
+}
+.login_pg h1 {
+	margin-top: 5%!important;	
+	font-size: 1.8em;
+}
 
