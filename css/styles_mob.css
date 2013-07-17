@@ -12,7 +12,7 @@ body {
 }
 p {
 	font-size: 0.8em!important;
-	line-height: 15px!important;
+	line-height: 15px!important;©
 	margin: 0!important;
 }
 h2 {
@@ -39,6 +39,10 @@ h2 {
 .list li a:after {
 	right: 20px!important;
 }
+/*a.pressed {
+	background-color: blue!important;
+}
+*/
 #defaultNav a.pressed {
 	background-color: #7AC943!important;
 	color: white!important;
@@ -121,7 +125,7 @@ h2 {
 	border-right: 1px solid #101012!important;
 }
 #afui .menuButton { 
-	/*float: left;*/
+	float: left!important;
 }
 #afui #menu .list li:last-child {
 	border-color: #101012;
@@ -245,6 +249,16 @@ h2 {
 	width: 100%;
 }
 
+/* Side Menu Catogories - Places */
+/* ------------------------------------------ */
+
+#side_nav_cat h2{
+	font-family: ubuntu;
+	color: white!important;
+	font-weight: 400;
+	margin-left: 1em!important;
+}
+
 /* Login Page */
 /* ------------------------------------------ */
 
@@ -269,3 +283,42 @@ h2 {
 	font-size: 1.8em;
 }
 
+/* Stories Page */
+/* ------------------------------------------ */
+
+.stories_pg {
+	padding: 0!important;
+}
+
+.story_unit {
+	height: 70%;
+	background-color: #f9f9f9;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	bottom: 0;
+
+	padding: 0.8em 1em 1em 1em;
+	border-top: 1px solid #ccc;
+	-webkit-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	-moz-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+}
+.story_unit .thumbnail_square {
+	margin-top: -26px;
+	width: 5em;
+	height: 5em;
+}
+.story_unit .thumbnail_square img {
+	width: 100%;
+}
+.story_unit h2 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0!important;
+	font-weight: 400!important;
+}
+.story_unit img {
+	width: 100%;
+}

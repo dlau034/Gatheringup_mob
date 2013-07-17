@@ -59,7 +59,7 @@
     var init = function(){
 	   $.ui.backButtonText="Back";  
 	   window.setTimeout(function(){$.ui.launch();},1500);
-       //$.ui.removeFooterMenu(); This would remove the bottom nav menu
+       // $.ui.removeFooterMenu(); This would remove the bottom nav menu
     };
     document.addEventListener("DOMContentLoaded",init,false);  
 	$.ui.ready(function(){console.log('ready');});
@@ -85,33 +85,24 @@
     <body>
 
         <div id="afui"> <!-- this is the main container div.  This way, you can have only part of your app use UI -->
-            <div id="splashscreen" class='ui-loadr'>
-                <!-- <img src="kitchensink/images/splash.png"> -->
-                <h1>Splash Screen</h1>
-                <br><br>
-            </div>
-
             <!-- this is the header div at the top -->
             <div id="header">
                 <a id='menubadge' onclick='af.ui.toggleSideMenu()' class='menuButton'></a>
-<!--                 <a id='menubadge' onclick='af.ui.toggleSideMenu()' class='menuButton'></a> -->
             </div>
 
             <div id="content">
                 <!-- here is where you can add your panels -->
 
-                <!-- <div title='GatheringUP' id="main" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home"  > -->
-
-
-                <div title="login" class="panel login_pg" data-header="" data-footer="" style="overflow:hidden"  id="login" selected="true"> 
+                <div title="login" class="panel login_pg" data-header="" data-footer="none" style="overflow:hidden"  id="login" selected="true"> 
 
                     <img src="images/gu_logo.png" alt="">
                     <h1 style="font-weight:400;">Find things to do in-and-around<br> Central Park</h1>
                     <a class="button btn-facebook" href="#main"><span id="fb_icon"></span>Sign in with Facebook</a>
-                </div> <!-- Default loaded panel -->
+                </div> 
 
 
                 <div title='GatheringUP' id="main" class="panel featured_pg" >
+
                     <!-- <img src="images/gu_logo.png" alt=""> -->
                     <ul class="list">
                         <li>
@@ -276,10 +267,12 @@
                     </ul>
                 </div>
 
-                <!-- <div title='Places' id="places" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home"> -->
+            <!-- <div title='Places' id="places" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home"> -->
+
+            <!-- Places Page -->
                 
-                <div title='Places' data id="places" class="panel place_pg" style="overflow:hidden">
-                    <div id="map"></div>    
+                <div title='Places' data id="places" class="panel place_pg" style="overflow:hidden" data-nav="side_nav_cat">
+                    <div id="map2"></div>    
 
                     <div class="place_unit">
                         <div class="thumbnail_square">
@@ -301,25 +294,50 @@
                             <li><a href="#">Comments & Reviews</a></li>
                             <li><a href="#">Share</a></li>                        
                         </ul>
-                    </div>                    
-                    
- 
+                    </div>                     
                 </div>          
 
-                <div title='Events' id="events" class="panel">
+            <!-- Events Page  -->
+
+                <div title='Events' id="events" class="panel" data-nav="second_nav">
                     <h1>Events</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, praesentium, quis suscipit a dignissimos eum tempora modi in ipsam sint sed nobis saepe et blanditiis labore aut tenetur fuga dolorum.</p>
-
                 </div>                              
 
-            </div>
-            <!-- bottom navbar. Add additional tabs here -->
+            <!-- Story Page  -->
+
+                <div title='Stories' data id="stories" class="panel stories_pg"  data-nav="side_nav_story">
+                    <div id="map"></div>    
+
+                    <div class="story_unit">
+                        <div class="thumbnail_square">
+                            <img src="images/jeremy.jpg" alt="">
+                        </div>                            
+                        <h2>The many dimensions of Bethesda Terrace</h2>
+                        <span class="cat_tag_mini">Local</span>
+                        <span class="cat_tag_mini">Visitors</span>
+                        
+                        <img src="images/story1.jpg" alt="">                        
+                        <p>Enter Central Park at West 72nd street, wander through Strawberry Fields and climb over Cherry Hill, and you’ll be standing in Bethesda Terrace, one of the most iconic spots in all of Central Park.
+                        <br>Known for its fountain, which features the Angel of the Waters statue, Bethesda Terrace is a popular place for park goers of all types to gather. </p>
+
+                        <p>(212) 769-5100<br>
+                        Central Park West at 79th Street<br>
+                        New York, NY 10024</p>
+
+                        <ul class="list inset">
+                            <li><a href="#">Website</a></li>
+                            <li><a href="#">Comments & Reviews</a></li>
+                            <li><a href="#">Share</a></li>                        
+                        </ul>
+                    </div>                     
+                </div>                                                         
+
+            </div>  <!-- Content End Tag -->
+
+            <!-- Bottom Navbar.  -->
+            <!-- Add additional tabs here -->
+
             <div id="navbar">
                 <div class="horzRule"></div>
                 <a href="#main" id='navbar_home' class='icon home'>Home</a>
@@ -327,14 +345,17 @@
                 <a href="#events" id='navbar_events' class='icon home'>Events</a>
                 <a href="#stories" id='navbar_stories' class='icon pencil'>Stories</a>
             </div>
+
+            <!-- Left Side Nav Menu -->
             <!-- this is the default left side nav menu.  If you do not want any, do not include these -->
-            <nav class="side_nav_main">
-                <!-- <div class='title'>Home</div> -->
+
+            <!-- General Nav Menu --> 
+
+            <nav class="side_nav_main" >                
                 <div class="thumbnail_square pro_dp">
                     <img src="images/joshua_100px.jpg" alt="">
                 </div>                  
-                <h4>Joshua GatheringUP</h4>
-                
+                <h4>Joshua GatheringUP</h4>                
                 <ul class="list side_nav">
                     <li>
                         <a href="#">Edit Profile</a>                        
@@ -347,9 +368,27 @@
                     </li>                           
                 </ul>
             </nav>
-            <nav id="second">
-                Second Menu
-                <h4>Joshua GatheringUP</h4>
+
+            <!-- Nav Menu for Places Cateogories --> 
+
+            <nav id="side_nav_cat"> 
+                <div class='title'>
+                    <h2>Categories</h2>
+                </div>
+                <ul class="list side_nav">
+                    <li>
+                        <a href="#">Central Park</a>                        
+                    </li>
+                    <li>
+                        <a href="#">Lincoln Center</a>
+                    </li>                           
+                    <li>
+                        <a href="#">Columbus Circle</a>
+                    </li>                          
+                    <li>
+                        <a href="#">Museum Mile</a>
+                    </li>                                               
+                </ul>
             </nav>
         </div>
 
@@ -363,36 +402,45 @@
             });
 
             $.ui.slideSideMenu = true; //When set to false, can not swipe to reveal
-            fixedSideMenuWidth=768; //If the sidemenu is always shown, this will prevent it from being dragged
+            // fixedSideMenuWidth=800; 
+            //If the sidemenu is always shown, this will prevent it from being dragged
+
+            $.ui.showBackbutton=false
         </script>    
     
-<script>
-    $.ui.ready(
-    function(){
-          var map = L.map('map').setView([40.78486, -73.963036], 13);
+        <script>
+            $.ui.ready(
+            function(){
+                var map = L.map('map').setView([40.78486, -73.963036], 13);
 
-        L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-            maxZoom: 18
-        }).addTo(map);
+                L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
+                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                    maxZoom: 18
+                }).addTo(map);
 
-        var myIcon = L.icon({
-            iconUrl: 'http://siteimages.gatheringup.com/mapsicon/1.png',
-            iconSize: [47, 47],
-            iconAnchor: [23, 47],
-            popupAnchor: [0, -47]
-        });
+                var myIcon = L.icon({
+                    iconUrl: 'http://siteimages.gatheringup.com/mapsicon/1.png',
+                    iconSize: [47, 47],
+                    iconAnchor: [23, 47],
+                    popupAnchor: [0, -47]
+                });
 
-        var marker = L.marker([40.78486, -73.963036],{icon: myIcon}).addTo(map);
+                var marker = L.marker([40.78486, -73.963036],{icon: myIcon}).addTo(map);
 
-        marker.on('click', function(e) {
-            map.panTo([40.74, -73.96]);
-            map.setZoom(14);
-        });
-        marker.bindPopup("<b>Hello world!</b><br>I am a popup.");    
-            }
-        );
-</script>
+                marker.on('click', function(e) {
+                    map.panTo([40.74, -73.96]);
+                    map.setZoom(14);
+                });
+                marker.bindPopup("<b>Hello world!</b><br>I am a popup.");    
+                    }
+                );
+
+                $.ui.ready(
+                    function(){
+                        $.ui.toggleHeaderMenu(true); //force hide
+                    }
+                ); //Toggle the header menu on load    
+        </script>
 
     </body>
 
