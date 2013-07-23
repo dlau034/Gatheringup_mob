@@ -39,16 +39,36 @@ h2 {
 .list li a:after {
 	right: 20px!important;
 }
-/*a.pressed {
-	background-color: blue!important;
-}
-*/
-#defaultNav a.pressed {
+@#defaultNav a.pressed {
 	background-color: #7AC943!important;
 	color: white!important;
 }
+#afui #navbar a.pressed {
+	border-radius: 4px;
+	background-color: #7CAF2C;
+}
+#afui #header h1 {
+	/*left: 50%!important;*/
+    /*margin-left: -100px!important;*/
+}
+.icon:before {
+	font-size: 1.7em!important;
+	margin-top: 2px!important;
+}
 
-/* Featured Home Page */
+
+/* Global @Leaflet Map Styling */
+/* ------------------------------------------ */
+
+.leaflet-control-attribution {
+	display: none;
+}
+.leaflet-control-container {
+	display: none;
+}
+
+
+/* @Featured Home Page */
 /* ------------------------------------------ */
 
 .thumbnail_square {
@@ -115,6 +135,14 @@ h2 {
 .tag_place {
 	background-color: #F6921D;
 }
+.featured_pg a.pressed {
+	/*background-color: blue!important;*/
+}
+.featured_pg .list li:active {
+	background-color: rgba(0,0,0,0.08);
+}
+
+
 
 /* Side Nav Main */
 /* ------------------------------------------ */
@@ -125,7 +153,7 @@ h2 {
 	border-right: 1px solid #101012!important;
 }
 #afui .menuButton { 
-	float: left!important;
+	/*float: left!important;*/
 }
 #afui #menu .list li:last-child {
 	border-color: #101012;
@@ -283,7 +311,13 @@ h2 {
 	font-size: 1.8em;
 }
 
-/* Stories Page */
+/* Stories Listing */
+/* ------------------------------------------ */
+
+
+
+
+/* Stories Article */
 /* ------------------------------------------ */
 
 .stories_pg {
@@ -291,21 +325,22 @@ h2 {
 }
 
 .story_unit {
-	height: 70%;
 	background-color: #f9f9f9;
-	position: absolute;
+	position: relative;
 	z-index: 2;
 	width: 100%;
-	bottom: 0;
+	/*bottom: 0;*/
+	/*margin-top: 50%;*/
 
 	padding: 0.8em 1em 1em 1em;
 	border-top: 1px solid #ccc;
-	-webkit-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
-	-moz-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
-	box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	-webkit-box-shadow:  0px 0px 1px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	-moz-box-shadow:  0px 0px 1px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	box-shadow:  0px 0px 1px rgba(0,0,0,0.1),inset 0px 1px 0px white;
 }
 .story_unit .thumbnail_square {
 	margin-top: -26px;
+	margin-bottom: 8px;
 	width: 5em;
 	height: 5em;
 }
@@ -313,12 +348,79 @@ h2 {
 	width: 100%;
 }
 .story_unit h2 {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 	padding: 0!important;
 	font-weight: 400!important;
 }
 .story_unit img {
 	width: 100%;
+}
+.stories_map {
+	position: relative!important;
+	height: 26em!important;
+}
+@media (max-height: 481px) {
+	.stories_map {
+		position: relative!important;
+		height: 20em!important;
+	}
+}
+.story_entry {
+	margin-top: 1em;
+}
+.story_entry img {
+	border: 3px solid white!important;
+	-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+	-moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.4)!important;	
+
+	margin-bottom: 0.5em;
+}
+.story_entry p {
+	margin-bottom: 1.5em!important;
+	font-size: 0.9em!important;
+	line-height: 18px!important;
+}
+
+/* Stories Article Side Nav */
+/* ------------------------------------------ */
+
+#side_nav_story h2 {
+	font-family: ubuntu;
+	color: white!important;
+	font-weight: 400;
+	margin-left: 1em!important;
+}
+#side_nav_story .side_nav a {
+	margin: 0!important;
+}
+#side_nav_story .side_nav a img {
+	float: left;
+}
+.side_story_list img {
+	width: 100%;
+}
+.side_story_list a {
+	margin-left: 0!important;
+	padding-left: 0!important;
+	/*margin: 0!important;*/
+	/*padding: 0!important;*/
+}
+.side_story_list .thumbnail_square {
+	width: 5em;
+	height: 5em;
+	margin-right: 0.5em;
+}
+.side_story_list p {
+	width: 88%;
+	margin: 0!important;
+	line-height: 12px!important;
+}
+.side_story_list li {
+	min-height: 6.7em!important;
+}
+.side_story_list h4 {
+	font-size: 0.9em;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
