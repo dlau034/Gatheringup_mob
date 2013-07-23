@@ -1,4 +1,4 @@
-/* General Styles */
+/* @General Styles */
 /* ------------------------------------------ */
 
 html, body {
@@ -144,7 +144,7 @@ h2 {
 
 
 
-/* Side Nav Main */
+/* @SideNav Main */
 /* ------------------------------------------ */
 
 #afui > #menu.tabletMenu {
@@ -227,26 +227,42 @@ h2 {
 #map { 
 	height: 100%;
 	width: 100%; 
-	z-index: 1;
+
+	z-index: -1;
 	position: fixed;
 }
 .place_pg {
 	padding: 0!important;
 }
 .place_unit {
-	height: 70%;
+	/*height: 70%;*/
 	background-color: #f9f9f9;
 	position: absolute;
 	z-index: 2;
 	width: 100%;
-	bottom: 0;
-	/*margin-bottom: -2em;*/
+	/*bottom: -26em;*/
+	
 	padding: 0.8em 1em 1em 1em;
 	border-top: 1px solid #ccc;
 	-webkit-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
 	-moz-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
 	box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
 }
+.place_unit2 {
+	/*height: 70%;*/
+	background-color: #f9f9f9;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	/*bottom: -26em;*/
+	padding: 0.8em 1em 1em 1em;
+	border-top: 1px solid #ccc;
+	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	overflow: scroll;
+}
+
 .cat_tag_mini {
 	font-size: 0.85em!important;
 	font-family: ubuntu!important;
@@ -258,25 +274,56 @@ h2 {
 	white-space: nowrap;
 	line-height: 2em;
 }
-.place_unit h2 {
+.place_dp h2 {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	padding: 0!important;
 	font-weight: 400!important;
 }
-.place_unit p {
+.place_dp p {
 	margin-top: 1em!important;
 }
-.place_unit .thumbnail_square {
-	margin-top: -26px;
+.place_dp .thumbnail_square {
+	/*margin-top: -26px;*/
+	margin-top: -2em;
 	width: 5em;
 	height: 5em;
 }
-.place_unit .thumbnail_square img {
+.place_dp .thumbnail_square img {
 	width: 100%;
 }
 
+/* Events Page */
+/* ------------------------------------------ */
+.events_pg {
+	padding: 0!important;
+}
+
+.place_dp {
+	padding: 0.5em 1em;
+	/*min-height: 350px!important;*/
+	/*max-height: 425px;*/
+	height: 425px!important;
+}
+#events_car {
+	height: auto!important;
+	position: absolute;
+
+	bottom: -26em;
+	width: 100%;
+	overflow: visible!important;
+
+	border-top: 2px solid white;
+	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
+	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;	
+}
+
+#events_car > div {
+	height: auto!important;
+	min-height: 0!important;
+}
 /* Side Menu Catogories - Places */
 /* ------------------------------------------ */
 
@@ -424,3 +471,8 @@ h2 {
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
+
+/*.scroll {
+	overflow-y: scroll;
+}*/
+
