@@ -56,6 +56,24 @@ h2 {
 	margin-top: 2px!important;
 }
 
+#navbar_places {
+	background-image: url("../images/place_icon.png")!important;
+	background-repeat: no-repeat!important;
+	background-position-x: center!important;
+	background-size: 24px 28px!important;
+}
+#navbar_events {
+	background-image: url("../images/place_event.png")!important;
+	background-repeat: no-repeat!important;
+	background-position-x: center!important;
+	background-size: 24px 28px!important;
+}
+#navbar_stories {
+	background-image: url("../images/place_stories.png")!important;
+	background-repeat: no-repeat!important;
+	background-position-x: center!important;
+	background-size: 24px 28px!important;
+}
 
 /* Global @Leaflet Map Styling */
 /* ------------------------------------------ */
@@ -93,11 +111,15 @@ h2 {
 .featured_pg h2 {
 	padding: 0!important;
 	font-size: 16px!important;
-	margin-bottom: 0px!important;
-	width: 88%;
 	font-weight: 400!important;
+	margin-bottom: 0px!important;
+	/*width: 88%;*/
 	height: auto!important;
-	/*background-color: red;*/
+
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+
 }
 .featured_pg b {
 	margin-top: 0.5em;
@@ -114,17 +136,15 @@ h2 {
 }
 
 .tag_home {
-	font-family: arvo;	
+	font-family: arvo;
 	color: white!important;
-	position: absolute;
-	right: -10px;
-	
-	padding: 0.3em 0.5em;
+	padding: 0.1em 0.5em;
 	font-size: 0.85em;
 	font-weight: 400;
 	position: absolute;
 	right: 0;
-	margin-top: -10px;
+	margin-bottom: 9px;
+	bottom: 0;
 }
 .tag_story {
 	background-color: #FFD321;
@@ -231,30 +251,51 @@ h2 {
 	z-index: -1;
 	position: fixed;
 }
+#map3 { 
+	height: 100%;
+	width: 100%; 
+	z-index: -1;
+	position: fixed;
+}
 .place_pg {
 	padding: 0!important;
 }
+#places_car {
+	height: auto!important;
+	position: relative;
+
+	margin-top: 20em;
+	/*bottom: -26em;*/
+	width: 100%;
+	overflow: visible!important;
+
+	border-top: 2px solid white;
+	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
+	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;	
+}
+
 .place_unit {
-	/*height: 70%;*/
 	background-color: #f9f9f9;
-	position: absolute;
+	position: relative;
 	z-index: 2;
 	width: 100%;
-	/*bottom: -26em;*/
-	
+
+	margin-top: 50%;
+
 	padding: 0.8em 1em 1em 1em;
 	border-top: 1px solid #ccc;
-	-webkit-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
-	-moz-box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
-	box-shadow:  0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	-webkit-box-shadow: 0px 0px 1px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	-moz-box-shadow: 0px 0px 1px rgba(0,0,0,0.1),inset 0px 1px 0px white;
+	box-shadow: 0px 0px 1px rgba(0,0,0,0.1),inset 0px 1px 0px white;	
+
 }
 .place_unit2 {
-	/*height: 70%;*/
 	background-color: #f9f9f9;
 	position: absolute;
 	z-index: 2;
 	width: 100%;
-	/*bottom: -26em;*/
+
 	padding: 0.8em 1em 1em 1em;
 	border-top: 1px solid #ccc;
 	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.1),inset 0px 1px 0px white;
@@ -273,6 +314,12 @@ h2 {
 	background-color: #777!important;
 	white-space: nowrap;
 	line-height: 2em;
+}
+.place_dp {
+	padding: 0.5em 1em;
+	/*min-height: 350px!important;*/
+	/*max-height: 425px;*/
+	height: 425px!important;
 }
 .place_dp h2 {
 	white-space: nowrap;
@@ -300,7 +347,7 @@ h2 {
 	padding: 0!important;
 }
 
-.place_dp {
+.event_dp {
 	padding: 0.5em 1em;
 	/*min-height: 350px!important;*/
 	/*max-height: 425px;*/
@@ -308,9 +355,10 @@ h2 {
 }
 #events_car {
 	height: auto!important;
-	position: absolute;
+	position: relative;
 
-	bottom: -26em;
+	margin-top: 20em;
+	/*bottom: -26em;*/
 	width: 100%;
 	overflow: visible!important;
 
@@ -323,6 +371,29 @@ h2 {
 #events_car > div {
 	height: auto!important;
 	min-height: 0!important;
+}
+
+.event_dp h2 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0!important;
+	font-weight: 400!important;
+}
+.event_dp h5 {
+	margin-top: 3px;
+}
+.event_dp p {
+	margin-top: 1em!important;
+}
+.event_dp .thumbnail_square {
+	/*margin-top: -26px;*/
+	margin-top: -2em;
+	width: 5em;
+	height: 5em;
+}
+.event_dp .thumbnail_square img {
+	width: 100%;
 }
 /* Side Menu Catogories - Places */
 /* ------------------------------------------ */
@@ -376,6 +447,9 @@ h2 {
 	position: relative;
 	z-index: 2;
 	width: 100%;
+
+	margin-top: -50%;
+
 	/*bottom: 0;*/
 	/*margin-top: 50%;*/
 
@@ -401,15 +475,20 @@ h2 {
 .story_unit img {
 	width: 100%;
 }
+#map2 {
+	height: 100%!important;
+}
+
 .stories_map {
 	position: relative!important;
-	height: 26em!important;
+	height: 24em!important;
+	/*height: 100%!important;*/
 }
 @media (max-height: 481px) {
-	.stories_map {
+/*	.stories_map {
 		position: relative!important;
 		height: 20em!important;
-	}
+	}*/
 }
 .story_entry {
 	margin-top: 1em;

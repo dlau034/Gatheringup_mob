@@ -6,11 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
+<!-- Appframework Essential CSS -->
+
 <link rel="stylesheet" type="text/css" href="css/icons.css" /> 
 <link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
 
 <!-- <link rel="stylesheet" type="text/css" href="css/src/main.css"  /> -->
 <!-- <link rel="stylesheet" type="text/css" href="css/src/appframework.css"  /> -->
+
+<!-- Custom CSS -->
 
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
 <link rel="stylesheet" type="text/css" href="css/styles_mob.css" title="default" />
@@ -24,16 +28,23 @@
     <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script> 
     <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script> 	
 -->
-    <script type="text/javascript" charset="utf-8" src="js/appframework.js"></script>    
-    <script type="text/javascript" charset="utf-8" src="js/appframework.ui.js"></script>       
-    <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>       
-    <script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
 
-          
+<!-- Appframework Essential JS -->
+
+<script type="text/javascript" charset="utf-8" src="js/appframework.js"></script>    
+<script type="text/javascript" charset="utf-8" src="js/appframework.ui.js"></script>       
+       
+<!-- Appframework Plugin JS -->
+
+<script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
+<script type="text/javascript" charset="utf-8" src="js/plugins/af.scroller.js"></script>       
+
 <!-- Javascript Leaflet  -->
- <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+
+ <script src="js/leaflet.js"></script>
 
 <!-- include touch.js on desktop browsers only -->
+
 <script>
 
     if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
@@ -89,9 +100,13 @@
             </div>
 
             <div id="content">
-                <!-- here is where you can add your panels -->
 
-                <div title="login" class="panel login_pg" data-header="" data-footer="none" style="overflow:hidden"  id="login" selected="true"> 
+                <!-- here is where you can add your panels -->
+                <!-- ##################################### -->
+
+                <!-- @login Page -->
+
+                <div title="login" class="panel login_pg" data-header="" data-footer="none" style="overflow:hidden"  id="login" selected="true">
 
                     <img src="images/gu_logo.png" alt="">
                     <h1 style="font-weight:400;">Find things to do in-and-around<br> Central Park</h1>
@@ -115,7 +130,7 @@
                             </div>                                             
                             <h2>The many dimensions of Bethesda Terraces</h2>
                             <b>By Jeremy Klein</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... Read More</p>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, </p>
                             </a>
                         </li>
                         <li>
@@ -128,7 +143,7 @@
                             </div>                            
                             <h2>Sunset Cocktails & Live Jazz over Lincoln Center</h2>
                             <b>June 24, 2013 at 6:30 PM</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting </p>
                             </a>
                         </li>        
                         <li>
@@ -141,9 +156,11 @@
                             </div>                            
                             <h2>American Natural History Museum</h2>
                             <b>Central Park West at 79th Street</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting </p>
                             </a>
-                        </li>                        <li>
+                        </li>                        
+                        <li>
+                            <a href="#stories">
                             <div class="thumbnail_square">
                                 <img src="images/thumb_run.jpg" alt="">
                             </div>                
@@ -152,9 +169,11 @@
                             </div>                                             
                             <h2>The many dimensions of Bethesda Terraces</h2>
                             <b>By Jeremy Klein</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... Read More</p>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, </p>
+                            </a>
                         </li>
                         <li>
+                            <a href="#events">
                             <div class="tag_home tag_event">    
                                 Events
                             </div>                               
@@ -163,9 +182,11 @@
                             </div>                            
                             <h2>Sunset Cocktails & Live Jazz over Lincoln Center</h2>
                             <b>June 24, 2013 at 6:30 PM</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting </p>
+                            </a>
                         </li>        
                         <li>
+                            <a href="#places">
                             <div class="tag_home tag_place">    
                                 Places
                             </div>                               
@@ -174,42 +195,11 @@
                             </div>                            
                             <h2>American Natural History Museum</h2>
                             <b>Central Park West at 79th Street</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
-                        </li>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting </p>
+                            </a>
+                        </li>  
                         <li>
-                            <div class="tag_home tag_event">    
-                                Events
-                            </div>                               
-                            <div class="thumbnail_square">
-                                <img src="images/thumb_soccer.jpg" alt="">
-                            </div>                            
-                            <h2>Sunset Cocktails & Live Jazz over Lincoln Center</h2>
-                            <b>June 24, 2013 at 6:30 PM</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
-                        </li>        
-                        <li>
-                            <div class="tag_home tag_place">    
-                                Places
-                            </div>                               
-                            <div class="thumbnail_square">
-                                <img src="images/Museum.jpg" alt="">
-                            </div>                            
-                            <h2>American Natural History Museum</h2>
-                            <b>Central Park West at 79th Street</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
-
-                        </li>     
-                        <li>
-                            <div class="tag_home tag_place">    
-                                Places
-                            </div>                               
-                            <div class="thumbnail_square">
-                                <img src="images/Museum.jpg" alt="">
-                            </div>                            
-                            <h2>American Natural History Museum</h2>
-                            <b>Central Park West at 79th Street</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
-                        </li>                        <li>
+                            <a href="#stories">
                             <div class="thumbnail_square">
                                 <img src="images/thumb_run.jpg" alt="">
                             </div>                
@@ -218,9 +208,11 @@
                             </div>                                             
                             <h2>The many dimensions of Bethesda Terraces</h2>
                             <b>By Jeremy Klein</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... Read More</p>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, </p>
+                            </a>
                         </li>
                         <li>
+                            <a href="#events">
                             <div class="tag_home tag_event">    
                                 Events
                             </div>                               
@@ -229,9 +221,11 @@
                             </div>                            
                             <h2>Sunset Cocktails & Live Jazz over Lincoln Center</h2>
                             <b>June 24, 2013 at 6:30 PM</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting </p>
+                            </a>
                         </li>        
                         <li>
+                            <a href="#places">
                             <div class="tag_home tag_place">    
                                 Places
                             </div>                               
@@ -240,30 +234,9 @@
                             </div>                            
                             <h2>American Natural History Museum</h2>
                             <b>Central Park West at 79th Street</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
-                        </li>
-                        <li>
-                            <div class="tag_home tag_event">    
-                                Events
-                            </div>                               
-                            <div class="thumbnail_square">
-                                <img src="images/thumb_soccer.jpg" alt="">
-                            </div>                            
-                            <h2>Sunset Cocktails & Live Jazz over Lincoln Center</h2>
-                            <b>June 24, 2013 at 6:30 PM</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
-                        </li>        
-                        <li>
-                            <div class="tag_home tag_place">    
-                                Places
-                            </div>                               
-                            <div class="thumbnail_square">
-                                <img src="images/Museum.jpg" alt="">
-                            </div>                            
-                            <h2>American Natural History Museum</h2>
-                            <b>Central Park West at 79th Street</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the ...</p>
-                        </li>   
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting </p>
+                            </a>
+                        </li>                                                  
 
                     </ul>
                 </div>
@@ -272,38 +245,11 @@
 
             <!-- @Places Page -->
                 
-                <div title='Places' data id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-nav="side_nav_cat">
-                    <div id="map3"></div>    
+             
+                <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-nav="side_nav_cat">
+                    <div id="map3"></div>  
 
-                    <div class="place_unit">
-                        <div class="thumbnail_square">
-                            <img src="images/Museum.jpg" alt="">
-                        </div>                            
-                        <h2>American Museum of Natural History History </h2>
-                        <span class="cat_tag_mini">Favorites</span>
-                        <span class="cat_tag_mini">Musuem</span>
-                        <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
-
-                        <p>(212) 769-5100<br>
-                        Central Park West at 79th Street<br>
-                        New York, NY 10024</p>
-
-                        <ul class="list inset">
-                            <li><a href="#">What's Nearby</a></li>
-                            <li><a href="#">Website</a></li>
-                            <li><a href="#">Food Menu</a></li>
-                            <li><a href="#">Comments & Reviews</a></li>
-                            <li><a href="#">Share</a></li>                        
-                        </ul>
-                    </div>                     
-                </div>          
-
-            <!-- @Events Page  -->
-
-                <div title='Events'  id="events" class="panel events_pg" data-tab="navbar_events" data-nav="second_nav" style="overflow:hidden">
-                    <div id="map"></div>    
-                    
-                    <div id="events_car" style="">
+                   <div id="events_car" style="">
                     
                        <div class="place_dp" style="background:#f9f9f9;">
                             <div class="thumbnail_square">
@@ -372,7 +318,83 @@
                        </div>
                            
        
-                    </div>         
+                    </div>   
+                    <!-- Slide wrapper ends  -->                   
+                </div>          
+
+            <!-- @Events Page  -->
+
+                <div title='Events'  id="events" class="panel events_pg" data-tab="navbar_events" data-nav="second_nav" style="overflow:hidden">
+                    <div id="map"></div>    
+                    
+                    <div id="events_car" style="">
+                    
+                       <div class="event_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/event1.jpg" alt="">
+                            </div>                                                    
+                            <h2>1. Lincoln Center Out of Doors Presents Mark Dendy Dance & Theater Projects: Ritual Cyclical</h2>
+                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>        
+<!--                             <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">Website</a></li>
+                                <li><a href="#">Food Menu</a></li>
+                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>     -->                                            
+                        </div>
+                       <div class="event_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/event2.jpg" alt="">
+                            </div>                                                    
+                            <h2>2. BLEU VIOLIN: Love & Basketball...and KARAOKE </h2>
+                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
+                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
+
+                            </p>
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>  
+     <!--                        <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">Website</a></li>
+                                <li><a href="#">Food Menu</a></li>
+                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>        -->                                                                     
+                       </div>
+
+                           
+                       <div class="event_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/event3.jpg" alt="">
+                            </div>                                                    
+                            <h2>3. Shape Up NYC: Yoga</h2>
+                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
+                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
+
+                            </p>
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>  
+<!--                             <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">Website</a></li>
+                                <li><a href="#">Food Menu</a></li>
+                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>       -->                                                                      
+                       </div>
+                           
+       
+                    </div>   
+                    <!-- Slide wrapper ends  -->
                 </div>
 
  
@@ -458,10 +480,18 @@
                 </div>                              
 
 
-            <!-- @Story Page  -->
+            <!-- @Storypage  -->
 
-                <div title='Story' id="stories"  class="panel stories_pg"  data-nav="side_nav_story" data-tab="none">
+                <div title='Story' id="stories"  class="panel stories_pg"  data-nav="side_nav_story" data-tab="none" style="overflow:hidden">
                     <div id="map2" class="stories_map"></div>    
+
+                <script>
+                    var myScroller;
+                    $.ui.ready(function () {
+
+                        myScroller = $(".story_unit").scroller(); //Fetch the scroller from cache
+                    });
+                </script>
 
                     <div class="story_unit">
                         <div class="thumbnail_square">
@@ -491,7 +521,110 @@
                             <li><a href="#">Share</a></li>                        
                         </ul>
                     </div>                     
-                </div>                                                         
+                </div>      
+
+<!-- Plugins> af.scroller -->
+
+<!-- <div class="panel login_pg" data-header="none" data-footer="none" style="overflow:hidden"  id="login" selected=""> -->
+
+<div id="testpanel" class="panel" style="overflow:hidden">     
+<div title="Scroller" id="webslider" style="background-color:red; margin-top:10em;"
+    <script>
+<!--         var myScroller;
+        $.ui.ready(function () {
+            myScroller = $(".story_unit").scroller(); //Fetch the scroller from cache
+        }); -->
+    </script>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+</div>                                                                   
+</div>
 
             </div>  <!-- Content End Tag -->
 
@@ -501,9 +634,9 @@
             <div id="navbar">
                 <div class="horzRule"></div>
                 <a href="#main" data-transition="none" id='navbar_home' class='icon home'>Home</a>
-                <a href="#places" data-transition="none" id='navbar_places' class='icon home'>Places</a>
-                <a href="#events" data-transition="none" id='navbar_events' class='icon home'>Events</a>
-                <a href="#storylist" data-transition="none" id='navbar_stories' class='icon pencil'>Stories</a>
+                <a href="#places" data-transition="none" id='navbar_places'>Places</a>
+                <a href="#events" data-transition="none" id='navbar_events'>Events</a>
+                <a href="#storylist" data-transition="none" id='navbar_stories'>Community</a>
             </div>
 
             <!-- General Nav Menu --> 
@@ -631,6 +764,17 @@
 
 
             // #############################################
+
+                var map = L.map('map3').setView([40.78486, -73.963036], 13);
+
+                L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
+                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                    maxZoom: 18
+                }).addTo(map);                
+
+
+
+            // #############################################            
 
                 var map = L.map('map').setView([40.78486, -73.963036], 13);
 

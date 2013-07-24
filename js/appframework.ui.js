@@ -3259,6 +3259,7 @@
     ui.prototype = {
         transitionTime: "230ms",
         showLoading: true,
+        loadingText: "Loading Content",
         loadContentQueue: [],
         isIntel: false,
         titlebar: "",
@@ -3282,7 +3283,7 @@
         selectBox: $.selectBox ? $.selectBox : false,
         ajaxUrl: "",
         transitionType: "slide",
-        scrollingDivs: [],
+        scrollingDivs: {},
         firstDiv: "",
         hasLaunched: false,
         launchCompleted: false,
@@ -3516,14 +3517,16 @@
            ```
 
          * @title $.ui.goBack()
+         * @param {Number} [delta=1]  relative position from the last element (> 0)
          */
-        goBack: function() {
-            if (this.history.length > 0) {
-                var that = this;
-                var tmpEl = this.history.pop();
-                that.loadContent(tmpEl.target + "", 0, 1, tmpEl.transition);
-                that.transitionType = tmpEl.transition;
-                that.updateHash(tmpEl.target);
+        goBack: function(delta) {
+            delta = Math.min(Math.abs(~~delta || 1), this.history.length);
+
+            if (delta) {
+                var tmpEl = this.history.splice(-delta).shift();
+                this.loadContent(tmpEl.target + "", 0, 1, tmpEl.transition);
+                this.transitionType = tmpEl.transition;
+                this.updateHash(tmpEl.target);
             }
         },
         /**
@@ -3970,7 +3973,7 @@
          * @title $.ui.showMask(text);
          */
         showMask: function(text) {
-            if (!text) text = "Loading Content";
+            if (!text) text = this.loadingText || "";
             $.query("#afui_mask>h1").html(text);
             $.query("#afui_mask").show();
         },
@@ -3996,14 +3999,22 @@
             var modalDiv = $.query("#modalContainer");
             if (typeof(id) === "string")
                 id = "#" + id.replace("#", "");
-            if ($.query(id)) {
-                modalDiv.html($.feat.nativeTouchScroll ? $.query(id).html() : $.query(id).get(0).childNodes[0].innerHTML + '', true);
+            var $panel = $.query(id);
+            if ($panel.length) {
+                var useScroller = this.scrollingDivs.hasOwnProperty( $panel.attr("id") );
+                modalDiv.html($.feat.nativeTouchScroll || !useScroller ? $.query(id).html() : $.query(id).get(0).childNodes[0].innerHTML + '', true);
                 modalDiv.append("<a onclick='$.ui.hideModal();' class='closebutton modalbutton'></a>");
                 that.modalWindow.style.display = "block";
 
                 this.runTransition(this.modalTransition, that.modalTransContainer, that.modalWindow, false);
 
-                this.scrollingDivs.modal_container.enable(that.resetScrollers);
+                if (useScroller) {
+                    this.scrollingDivs.modal_container.enable(that.resetScrollers);
+                }
+                else {
+                    this.scrollingDivs.modal_container.disable();
+                }
+
                 this.scrollToTop('modal');
                 modalDiv.data("panel", id);
 
@@ -4254,6 +4265,7 @@
             }
             if (hasHeader && hasHeader.toLowerCase() == "none") {
                 that.toggleHeaderMenu(false);
+                hasHeader=false;
             } else {
                 that.toggleHeaderMenu(true);
             }
@@ -4691,7 +4703,9 @@
             });
             if ($.os.ios) {
                 $.bind($.touchLayer, 'exit-edit-reshape', function() {
-                    that.scrollingDivs[that.activeDiv.id].setPaddings(0, 0);
+                    if (that.activeDiv && that.activeDiv.id && that.scrollingDivs.hasOwnProperty(that.activeDiv.id)) {
+                        that.scrollingDivs[that.activeDiv.id].setPaddings(0, 0);
+                    }
                 });
             }
 
@@ -5105,6 +5119,7 @@
         });
     }
 })();
+
 (function($ui){
         function fadeTransition (oldDiv, currDiv, back) {
             oldDiv.style.display = "block";
