@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><!--HTML5 doctype-->
+﻿@<!DOCTYPE html><!--HTML5 doctype-->
 <html>
 <head>
 <title>GatheringUP - Mobile</title>
@@ -16,7 +16,7 @@
 
 <!-- Custom CSS -->
 
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+<link rel="stylesheet" href="css/leaflet.css" />
 <link rel="stylesheet" type="text/css" href="css/styles_mob.css" title="default" />
 
 <!-- Google Fonts -->
@@ -38,6 +38,7 @@
 
 <script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
 <script type="text/javascript" charset="utf-8" src="js/plugins/af.scroller.js"></script>       
+<!-- <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>        -->
 
 <!-- Javascript Leaflet  -->
 
@@ -241,13 +242,19 @@
                     </ul>
                 </div>
 
-            <!-- <div title='Places' id="places" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home"> -->
-
+            
             <!-- @Places Page -->
                 
-             
-                <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-nav="side_nav_cat">
-                    <div id="map3"></div>  
+                <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
+                    <div id="map_place" class="map_place"></div>  
+
+                        <script>
+                            var myScroller;
+                        $.ui.ready(function () {
+                            $("#events_car").scroller(); //Fetch the scroller from cache
+                        });     
+
+                        </script>
 
                    <div id="events_car" style="">
                     
@@ -259,6 +266,10 @@
                             <span class="cat_tag_mini">Favorites</span>
                             <span class="cat_tag_mini">Musuem</span>                            
                             <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
+
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
+
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>                                                        
                             <p>(212) 769-5100<br>
                             Central Park West at 79th Street<br>
                             New York, NY 10024</p>        
@@ -324,10 +335,10 @@
 
             <!-- @Events Page  -->
 
-                <div title='Events'  id="events" class="panel events_pg" data-tab="navbar_events" data-nav="second_nav" style="overflow:hidden">
-                    <div id="map"></div>    
+                <div title='Events'  id="events" class="panel events_pg" data-tab="navbar_events" data-load="loadmap_event" data-nav="second_nav" style="overflow:hidden">
+                    <div id="map_event" class="event_map"></div>    
                     
-                    <div id="events_car" style="">
+                    <div id="events_car">
                     
                        <div class="event_dp" style="background:#f9f9f9;">
                             <div class="thumbnail_square">
@@ -482,8 +493,8 @@
 
             <!-- @Storypage  -->
 
-                <div title='Story' id="stories"  class="panel stories_pg"  data-nav="side_nav_story" data-tab="none" style="overflow:hidden">
-                    <div id="map2" class="stories_map"></div>    
+                <div title='Story' id="stories"  class="panel stories_pg"  data-nav="side_nav_story" data-tab="none" style="overflow:hidden" data-load="loadmap_story">
+                    <div id="map_story" class="stories_map"></div>    
 
                 <script>
                     var myScroller;
@@ -527,104 +538,33 @@
 
 <!-- <div class="panel login_pg" data-header="none" data-footer="none" style="overflow:hidden"  id="login" selected=""> -->
 
-<div id="testpanel" class="panel" style="overflow:hidden">     
-<div title="Scroller" id="webslider" style="background-color:red; margin-top:10em;"
-    <script>
-<!--         var myScroller;
-        $.ui.ready(function () {
-            myScroller = $(".story_unit").scroller(); //Fetch the scroller from cache
-        }); -->
-    </script>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-</div>                                                                   
-</div>
+                <div title='My GatheringUp' id="mypage" class="panel mypage_pg" data-nav="side_nav_mypage" data-tab="navbar_mypage" data-load="showCount" data-counter='5'> 
+
+                    <!-- execute showCount when the panel is loaded -->
+
+                    <script> function showCount(div) {
+                        alert($(div).data('counter'));
+                    } 
+                    </script>
+ 
+                <!--     <script>
+                        var myScroller;
+                        $.ui.ready(function () {
+                            myScroller = $(".story_unit").scroller(); //Fetch the scroller from cache
+                        });
+                    </script> -->
+
+                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
+                        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
+                        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
+                        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
+                        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
+                        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
+                        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
+                        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
+                   
+
+                </div>
 
             </div>  <!-- Content End Tag -->
 
@@ -637,11 +577,12 @@
                 <a href="#places" data-transition="none" id='navbar_places'>Places</a>
                 <a href="#events" data-transition="none" id='navbar_events'>Events</a>
                 <a href="#storylist" data-transition="none" id='navbar_stories'>Community</a>
+                <a href="#mypage" data-transition="none" id='navbar_mypage' class='icon user'>My GUP</a>
             </div>
 
             <!-- General Nav Menu --> 
 
-            <nav class="side_nav_main" >                
+<!--             <nav class="side_nav_main" >                
                 <div class="thumbnail_square pro_dp">
                     <img src="images/joshua_100px.jpg" alt="">
                 </div>                  
@@ -657,33 +598,68 @@
                         <a href="#">Log Out</a>
                     </li>                           
                 </ul>
-            </nav>
+                <div class="pull_tab"></div>       
+            </nav> -->
 
             <!-- Nav Menu for Places Cateogories --> 
 
             <nav id="side_nav_cat"> 
                 <div class='title'>
-                    <h2>Categories</h2>
+                    <h2>Place Categories</h2>
                 </div>
-                <ul class="list side_nav">
-                    <li>
-                        <a href="#">Central Park</a>                        
-                        <ul>
-                            <li>Playgrounds</li>
-                            <li>Points of Interest</li>
-                            <li>Sports Fields</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Lincoln Center</a>
-                    </li>                           
-                    <li>
-                        <a href="#">Columbus Circle</a>
-                    </li>                          
-                    <li>
-                        <a href="#">Museum Mile</a>
-                    </li>                                               
-                </ul>
+                <div class="side_nav">
+                    <ul class="list">
+                        <li class="cat_main" >Central Park</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                        
+                    </ul>                    
+                    <ul class="list">
+                        <li class="cat_main" >American Museum of Natural History</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                      
+                    </ul>                    
+                    <ul class="list">
+                        <li class="cat_main" >Columbus Circle</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                                                                               
+                    </ul>                    
+                    <ul class="list">
+                        <li class="cat_main" >Madison Avenue</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                            
+                    </ul>
+                    <ul class="list">
+                        <li class="cat_main" >West 86th - 96th St</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                        
+                    </ul>     
+                    <ul class="list">
+                        <li class="cat_main" >Upper East Side</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                          
+                    </ul>                                                                      
+                </div>
             </nav>
 
             <!-- Nav Menu for Story of selected Places Details -->             
@@ -732,10 +708,32 @@
                 </ul>
             </nav>
 
+            <!-- Nav Menu for @MYGATHERINGUP page -->             
+
+            <nav id="side_nav_mypage"> 
+                <div class="thumbnail_square pro_dp">
+                    <img src="images/joshua_100px.jpg" alt="">
+                </div>                  
+                <h4>Joshua GatheringUP</h4>                
+                <ul class="list side_nav">
+                    <li>
+                        <a href="#">Edit Profile</a>                        
+                    </li>
+                    <li>
+                        <a href="#">Settings</a>
+                    </li>                           
+                    <li>
+                        <a href="#">Log Out</a>
+                    </li>                           
+                </ul>
+                <div class="pull_tab"></div> 
+            </nav>            
+
+
         </div>
 
         <script>
-            
+            $.ui.toggleSideMenu(false);//Force the menu to hide
             $.ui.useOSThemes=false; //This must be set before $(document).ready() triggers;
             $.ui.setSideMenuWidth("200px"); //Set to 200px wide;
              
@@ -743,62 +741,18 @@
                 $.ui.setSideMenuWidth($("#afui").width()-50);//Set it to be full width - 50 pixels
             });
 
-            $.ui.slideSideMenu = false; 
+            // $.ui.toggleSideMenu(false);//Force the menu to hide
+            // $.ui.slideSideMenu = false; 
+
             //When set to false, can not swipe to reveal
             // fixedSideMenuWidth=800; 
             //If the sidemenu is always shown, this will prevent it from being dragged
 
-            // $.ui.showBackbutton=false
+            //Hides the back button
+            $.ui.showBackbutton=false
         </script>    
     
-        <script>
-            $.ui.ready(
-            function(){
-                var map = L.map('map2').setView([40.78486, -73.963036], 13);
 
-                L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                    maxZoom: 18
-                }).addTo(map);                
-
-
-
-            // #############################################
-
-                var map = L.map('map3').setView([40.78486, -73.963036], 13);
-
-                L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                    maxZoom: 18
-                }).addTo(map);                
-
-
-
-            // #############################################            
-
-                var map = L.map('map').setView([40.78486, -73.963036], 13);
-
-                L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                    maxZoom: 18
-                }).addTo(map);
-
-                var myIcon = L.icon({
-                    iconUrl: 'http://siteimages.gatheringup.com/mapsicon/1.png',
-                    iconSize: [47, 47],
-                    iconAnchor: [23, 47],
-                    popupAnchor: [0, -47]
-                });
-
-                var marker = L.marker([40.78486, -73.963036],{icon: myIcon}).addTo(map);
-
-                marker.on('click', function(e) {
-                    map.setZoom(14);
-                });
-                
-                    }
-                );
-        </script>
 
         <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
     </body>
