@@ -126,7 +126,7 @@ body {
 	font-size:18px;
 	font-weight:bold;
 	left:27.5%;
-	color:inherit;
+	color:#fff;
 	padding:10px 0;
 	text-shadow:rgba(0,0,0,0.8) 0 -1px 0;
 	text-align:center;
@@ -380,7 +380,7 @@ body {
 	UI
 **********************************************************/
 
-.ui-icon {
+#afui .ui-icon {
 	background: 						#666;
 	background: 						rgba(0,0,0,.4);
 	background-repeat: no-repeat;
@@ -580,7 +580,6 @@ body {
     background:#0088D1;
     border:none;
     border-bottom:1px solid #0088D1;
-    color:white;
  }
 
 #afui  #header h1 {
@@ -1679,28 +1678,32 @@ color:inherit;
 	background:#FDFDFD;
 	color:#000;
 }
-#afui.android > #header {
-    background:inherit;
-    color:inherit;
-    border-color:#33B5E5;
-}
 
+#afui.android > #header{
+ 	display:none !important;
+ }
+
+ #afui.android > #content {
+ 	bottom:0px !important;
+ 	top:49px !important;
+ }
 
  #afui.android > #navbar {
     box-shadow: none;
+ 	top:0px !important;
  	background:inherit;
- 	border-top:2px solid #33B5E5;
-    border-bottom:none;
+ 	border-bottom:2px solid #33B5E5;
+    border-top:none;
     padding:0;
  }
 
 #afui.android #navbar a {
 	color:inherit;
-    top:0px;
+	height:45px;
 }
  #afui.android #navbar a.pressed {
  	border:0px;
- 	border-top:4px solid #33B5E5;
+ 	border-bottom:4px solid #33B5E5;
  	border-radius:0px;
  	background:none;
  }
@@ -1951,7 +1954,7 @@ color:inherit;
   top:10px;
   right:-225px;
   left:auto;
-  color:inherit;
+  color:white;
   font-family:inherit;
   -webkit-transform:none;
   transform:none;
@@ -1969,7 +1972,6 @@ color:inherit;
   border:0px;
 	background: inherit;
 	border-bottom:inherit;
-  color:inherit;
  }
 
  #afui.win8 > #navbar {
@@ -2809,7 +2811,7 @@ color:black;
     background-image:linear-gradient(to bottom, #B3BECD 0%, #889BB3 50%, #6E84A2 51%);
     border: 1px solid;
     border-color:#CCD2DA transparent #2D3033 transparent;
-    color:white;
+
 } 
 
 #afui.ios #header h1 {

@@ -86,6 +86,36 @@ h2 {
 }
 
 
+/* @Custom Header Buttons */
+/* ------------------------------------------ */
+
+.rightButton {
+	position: relative;
+	top: 9px;
+	right: -8px;
+	height: 36px;
+	width: 36px;
+	z-index:2;
+	float:right;
+}
+.leftButton {
+	position: relative;
+	top: 9px;
+	right: -8px;
+	height: 36px;
+	width: 36px;
+	z-index:2;
+	float:left;
+}
+
+.nav_bookmark_button img {
+	width:35px;
+}
+.settings {
+	color: white;
+}
+
+
 /* @Featured Home Page */
 /* ------------------------------------------ */
 
@@ -262,6 +292,18 @@ h2 {
 	/*position: fixed;*/
 }
 
+/* Pull Tab */
+
+.tab_place {
+    position: absolute;
+    width: 30px;
+    height: 150px;
+    background-color: #333;
+    z-index: 100;
+    top: 10%;
+    border-right: 1px solid #ccc;
+    border-radius: 0px 4px 4px 0px;
+}
 
 .place_pg {
 	padding: 0!important;
@@ -415,10 +457,59 @@ h2 {
 	background-color: #444;
 	border-bottom: 1px solid #111;
 	padding: 6px 10px;
-
 }
 
-/* Login Page */
+/* @Mygathering @bookmark*/
+/* ------------------------------------------ */
+
+.bookmark_map {
+	height: 100%;
+}
+.mypage_pg {
+	padding: 0!important;
+}
+.bookmark_group a {
+	width: 5em;
+	background-color: red;
+}
+.bookmark_group {
+	position: fixed;
+	margin-top: 0em;
+	z-index: 100;
+	width: 100%;
+	height: 3em;
+	background-color: blue;
+}
+.button_bookmark {
+	background:transparent;
+	width: 33.333333333%!important;
+	float: left!important;
+}
+.button_bookmark a {
+	text-align: center;
+	background-color: #666;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+
+	padding-top: 0.4em;
+	padding-bottom: 0.5em;
+
+	font-weight: 400;
+	font-size: 0.9em;
+	color: white;
+
+	text-decoration: none;
+}
+.button_bookmark a:active {
+	background-color: red;
+}
+.bookmark_active {
+	background-color: #94BE54!important;
+}
+
+
+/* @Login Page */
 /* ------------------------------------------ */
 
 .login_pg {

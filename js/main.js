@@ -67,7 +67,7 @@ function loadmap_event(){
 
   if (map2 === undefined) {
 
-    var map2 = L.map('map_event').setView([40.78486, -73.963036], 13);
+    map2 = L.map('map_event').setView([40.78486, -73.963036], 13);
     L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
         maxZoom: 18
@@ -106,6 +106,21 @@ function loadmap_story(){
   }
 }
 
+var map4
+
+function loadmap_bookmark(){
+    
+  if (map4 === undefined) { 
+
+    map4 = L.map('map_bookmark').setView([40.78486, -73.963036], 13);
+    L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+        maxZoom: 18
+    }).addTo(map4);                                
+    console.log("bookmark page map working")
+  }
+}
+
 // #############################################            
 
     // var map = L.map('map').setView([40.78486, -73.963036], 13);
@@ -130,3 +145,12 @@ function loadmap_story(){
     
     //     }
     // );
+
+// var tab = ;
+
+$(".tab_place").swipe(function(){
+  
+  console.log("is being clicked!")
+    slidemenu();
+});
+

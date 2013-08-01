@@ -125,7 +125,7 @@ body {
 	font-size:18px;
 	font-weight:bold;
 	left:27.5%;
-	color:inherit;
+	color:#fff;
 	padding:10px 0;
 	text-shadow:rgba(0,0,0,0.8) 0 -1px 0;
 	text-align:center;
@@ -379,7 +379,7 @@ body {
 	UI
 **********************************************************/
 
-.ui-icon {
+#afui .ui-icon {
 	background: 						#666;
 	background: 						rgba(0,0,0,.4);
 	background-repeat: no-repeat;

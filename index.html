@@ -1,4 +1,4 @@
-﻿@<!DOCTYPE html><!--HTML5 doctype-->
+﻿<!DOCTYPE html><!--HTML5 doctype-->
 <html>
 <head>
 <title>GatheringUP - Mobile</title>
@@ -38,6 +38,7 @@
 
 <script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
 <script type="text/javascript" charset="utf-8" src="js/plugins/af.scroller.js"></script>       
+<script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu2.js"></script>       
 <!-- <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>        -->
 
 <!-- Javascript Leaflet  -->
@@ -98,7 +99,7 @@
             <div id="header">
                 <!-- <a id='menubadge' onclick='showMenu()' class='menuButton'></a> -->
                 <a href="javascript:$.ui.toggleSideMenu()"  class='menuButton'></a>
-            </div>
+            </div>            
 
             <div id="content">
 
@@ -246,15 +247,18 @@
             <!-- @Places Page -->
                 
                 <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
+                    
+                    <!-- <a class="tab_place" onclick="$.ui.toggleSideMenu()"></a> -->
+                    <div class="tab_place"></div>
                     <div id="map_place" class="map_place"></div>  
 
-                        <script>
-                            var myScroller;
-                        $.ui.ready(function () {
-                            $("#events_car").scroller(); //Fetch the scroller from cache
-                        });     
+                        // <script>
+                        //     var myScroller;
+                        // $.ui.ready(function () {
+                        //     $("#events_car").scroller(); //Fetch the scroller from cache
+                        // });     
 
-                        </script>
+                        // </script>
 
                    <div id="events_car" style="">
                     
@@ -534,36 +538,18 @@
                     </div>                     
                 </div>      
 
-<!-- Plugins> af.scroller -->
 
-<!-- <div class="panel login_pg" data-header="none" data-footer="none" style="overflow:hidden"  id="login" selected=""> -->
+                <!-- @Mypage @Bookmark  -->
 
-                <div title='My GatheringUp' id="mypage" class="panel mypage_pg" data-nav="side_nav_mypage" data-tab="navbar_mypage" data-load="showCount" data-counter='5'> 
+                <div title='My GatheringUp' id="mypage" data-header="header_mypage" class="panel mypage_pg" data-nav="side_nav_mypage" data-tab="navbar_mypage" data-load="loadmap_bookmark" style="overflow:hidden"> 
 
-                    <!-- execute showCount when the panel is loaded -->
-
-                    <script> function showCount(div) {
-                        alert($(div).data('counter'));
-                    } 
-                    </script>
- 
-                <!--     <script>
-                        var myScroller;
-                        $.ui.ready(function () {
-                            myScroller = $(".story_unit").scroller(); //Fetch the scroller from cache
-                        });
-                    </script> -->
-
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, lorem sit amet feugiat lacinia, mi dui sodales eros, id lacinia mauris urna eu est. Proin pulvinar, augue sed convallis elementum, magna diam pharetra magna, id vestibulum est eros
-                        vitae ante. Ut auctor erat a tellus venenatis eu fermentum lorem scelerisque. Cras dignissim leo ornare massa sollicitudin sit amet pulvinar turpis hendrerit. Morbi hendrerit nunc eget turpis luctus id ultricies lorem consequat. Donec eu lacus sed mauris
-                        sollicitudin laoreet. Cras vitae sodales diam. Donec mollis, libero ut pellentesque dignissim, risus orci ornare nisi, sed eleifend enim purus malesuada neque. Nulla tellus sem, scelerisque sed sagittis id, eleifend venenatis ligula. Vivamus placerat
-                        neque sit amet metus ultricies facilisis. Nulla a odio magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed commodo quam eu enim lacinia vitae ultrices nulla mollis. Aenean eget lectus turpis, at ultrices
-                        leo. Nulla vehicula magna in risus ornare vestibulum. Integer gravida magna quam. Donec augue ante, fringilla non congue eu, aliquam lacinia nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nisl
-                        ante, suscipit ut suscipit nec, dictum sit amet orci. Maecenas fermentum sapien turpis, sit amet eleifend justo. Aenean auctor interdum sem sed tincidunt. Aliquam ullamcorper malesuada fermentum. Nunc consectetur, ipsum et pulvinar ultrices, lorem nibh
-                        egestas sapien, at egestas lorem metus sit amet lacus. Maecenas non feugiat orci. Curabitur imperdiet tempus lacus, volutpat fermentum diam convallis a. In hac habitasse platea dictumst. Pellentesque nec ipsum diam, at consectetur elit. Duis feugiat ullamcorper
-                        libero tincidunt aliquet. Sed leo nisl, iaculis non pellentesque nec, scelerisque vel felis</div>
-                   
-
+                    <div class=" grid">
+                        <div class="col3 button_bookmark book"><a class="bookmark_active" href="#mypage">Bookmarked<br> Places</a></div>
+                        <div class="col3 button_bookmark"><a href="#mypage">Upcoming<br> Events</a></div>
+                        <div class="col3 button_bookmark"><a href="#mypage">Past<br> Events</a></div>
+                    </div>
+                    
+                    <div id="map_bookmark" class="bookmark_map"></div>   
                 </div>
 
             </div>  <!-- Content End Tag -->
@@ -604,6 +590,7 @@
             <!-- Nav Menu for Places Cateogories --> 
 
             <nav id="side_nav_cat"> 
+                <div class="pull_tab"></div>
                 <div class='title'>
                     <h2>Place Categories</h2>
                 </div>
@@ -729,8 +716,30 @@
                 <div class="pull_tab"></div> 
             </nav>            
 
+            <!-- @Header Custom for @MyPage @Bookmark page -->           
+
+            <div id="header_mypage">
+                <!-- <a id='menubadge' onclick='showMenu()' class='menuButton'></a> -->
+                <h1>My GatheringUP</h1>
+                <a href="#side_nav_mypage" onclick='showMenu()' class='leftButton nav_bookmark_button'><img src="images/custom_button.png" alt=""></a>
+                <a href="#settings" class='rightButton icon settings'></a>
+            </div>
+
+<!--             <header id="testheader">
+                <a id="backButton" title ="" onclick="$.ui.goBack()" class='button'>Go Back</a>
+                    <h1>Custom Header</h1>
+
+            </header>             -->
 
         </div>
+
+    <!-- @Storypage  -->
+
+        <div title='Story' id="stories"  class="panel stories_pg"  data-nav="side_nav_story" data-tab="none" style="overflow:hidden" data-load="loadmap_story">
+            <div id="map_story" class="stories_map"></div>    
+
+        </div>    
+
 
         <script>
             $.ui.toggleSideMenu(false);//Force the menu to hide
@@ -742,7 +751,7 @@
             });
 
             // $.ui.toggleSideMenu(false);//Force the menu to hide
-            // $.ui.slideSideMenu = false; 
+            // $.ui.slideSideMenu = true; 
 
             //When set to false, can not swipe to reveal
             // fixedSideMenuWidth=800; 
