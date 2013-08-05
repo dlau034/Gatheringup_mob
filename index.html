@@ -38,7 +38,11 @@
 
 <script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
 <script type="text/javascript" charset="utf-8" src="js/plugins/af.scroller.js"></script>       
+
+<!-- Uncomment to activate the swipe slide for side nav (need to call function) -->
 <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu2.js"></script>       
+
+<!-- Uncomment to activate the swipe slide for side nav (Applies globally)  -->
 <!-- <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>        -->
 
 <!-- Javascript Leaflet  -->
@@ -90,21 +94,14 @@
 </script>
 
 </head>
-
-
     <body>
 
         <div id="afui"> <!-- this is the main container div.  This way, you can have only part of your app use UI -->
-            <!-- this is the header div at the top -->
-            <div id="header">
-                <!-- <a id='menubadge' onclick='showMenu()' class='menuButton'></a> -->
-                <a href="javascript:$.ui.toggleSideMenu()"  class='menuButton'></a>
-            </div>            
 
-            <div id="content">
+    <!-- @Panels - here is where you can add your panels -->
+    <!-- ############################################################### -->
 
-                <!-- here is where you can add your panels -->
-                <!-- ##################################### -->
+            <div id="content"> <!-- Content Opening tag -->
 
                 <!-- @login Page -->
 
@@ -552,7 +549,21 @@
                     <div id="map_bookmark" class="bookmark_map"></div>   
                 </div>
 
+                <!-- @Settings  -->
+
+                <div title='Setting' id="setting" class="panel setting_pg" data-nav="side_nav_mypage"> 
+
+                    <ul class="list">
+                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="#">Edit Notifications</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>                    
+                </div>                
+
             </div>  <!-- Content End Tag -->
+
+    <!-- @Side Nav Panels  -->
+    <!-- ############################################################### -->
 
             <!-- Bottom @Navbar.  -->
             <!-- Add additional tabs here -->
@@ -716,30 +727,38 @@
                 <div class="pull_tab"></div> 
             </nav>            
 
+
+    <!-- @Headers  -->
+    <!-- ############################################################### -->
+
+            <!-- this is the default header if data-header is not set  -->
+
+            <div id="header">
+                <!-- <a id='menubadge' onclick='showMenu()' class='menuButton'></a> -->
+                <a href="javascript:$.ui.toggleSideMenu()"  class='menuButton'></a>
+            </div>            
+
+
             <!-- @Header Custom for @MyPage @Bookmark page -->           
 
             <div id="header_mypage">
                 <!-- <a id='menubadge' onclick='showMenu()' class='menuButton'></a> -->
                 <h1>My GatheringUP</h1>
-                <a href="#side_nav_mypage" onclick='showMenu()' class='leftButton nav_bookmark_button'><img src="images/custom_button.png" alt=""></a>
-                <a href="#settings" class='rightButton icon settings'></a>
+                <a href="javascript:$.ui.toggleSideMenu()" class='menuButton leftButton'></a>
+                <a href="#setting" class='rightButton nav_icon icon settings'></a>
             </div>
-
-<!--             <header id="testheader">
-                <a id="backButton" title ="" onclick="$.ui.goBack()" class='button'>Go Back</a>
-                    <h1>Custom Header</h1>
-
-            </header>             -->
-
+           
         </div>
 
     <!-- @Storypage  -->
 
         <div title='Story' id="stories"  class="panel stories_pg"  data-nav="side_nav_story" data-tab="none" style="overflow:hidden" data-load="loadmap_story">
             <div id="map_story" class="stories_map"></div>    
-
+ 
         </div>    
 
+    <!-- @Scripts  -->
+    <!-- ############################################################### -->
 
         <script>
             $.ui.toggleSideMenu(false);//Force the menu to hide
@@ -760,8 +779,6 @@
             //Hides the back button
             $.ui.showBackbutton=false
         </script>    
-    
-
 
         <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
     </body>

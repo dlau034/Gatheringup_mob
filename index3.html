@@ -1,0 +1,413 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+<title>GatheringUP - Mobile</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- Appframework Essential CSS -->
+
+<link rel="stylesheet" type="text/css" href="css/icons.css" /> 
+<link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="css/leaflet.css" />
+<link rel="stylesheet" type="text/css" href="css/styles_mob.css" title="default" />
+
+<!-- Google Fonts -->
+
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+
+
+<!-- Appframework Essential JS -->
+
+<script type="text/javascript" charset="utf-8" src="js/appframework.js"></script>    
+<script type="text/javascript" charset="utf-8" src="js/appframework.ui.js"></script>       
+       
+<!-- Appframework Plugin JS -->
+
+<script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
+<script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>       
+<script type="text/javascript" charset="utf-8" src="js/af.drawer.js"></script>    
+
+<!-- Javascript Leaflet  -->
+
+ <script src="js/leaflet.js"></script>
+
+<!-- include touch.js on desktop browsers only -->
+
+<script>
+
+    if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
+        var script=document.createElement("script");
+        script.src="js/jq.desktopBrowsers.js";
+        var tag=$("head").append(script);
+    }
+
+    $(document).ready(function(){
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    /* This function runs once the page is loaded, but appMobi is not yet active */
+	var webRoot="./";
+	$.ui.autoLaunch=false;
+    $.ui.resetScrollers=false;
+    var init = function(){
+	   $.ui.backButtonText="Back";  
+	   window.setTimeout(function(){$.ui.launch();},1500);
+       // $.ui.removeFooterMenu(); This would remove the bottom nav menu
+    };
+    document.addEventListener("DOMContentLoaded",init,false);  
+	$.ui.ready(function(){console.log('ready');});
+   
+    
+	
+    /* This code is used to run as soon as appMobi activates */
+    var onDeviceReady=function(){
+		AppMobi.device.setRotateOrientation("portrait");
+        AppMobi.device.setAutoRotate(false);
+		webRoot=AppMobi.webRoot+"/";
+	    //hide splash screen
+	    AppMobi.device.hideSplashScreen();	
+		
+    };
+    document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
+	
+</script>
+
+</head>
+
+
+    <body>
+
+        <div id="afui"> <!-- this is the main container div.  This way, you can have only part of your app use UI -->
+            <!-- this is the header div at the top -->
+            <div id="header">
+                <!-- <a id='menubadge' onclick='showMenu()' class='menuButton'></a> -->
+                <a href="javascript:$.ui.toggleSideMenu()"  class='menuButton'></a>
+            </div>
+
+            <div id="content">
+
+                <!-- here is where you can add your panels -->
+                <!-- ##################################### -->
+
+               
+    
+            <!-- @Places Page -->
+                
+                <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
+                    <div id="map_place" class="map_place"></div>  
+
+                   <div id="events_car" style="">
+                    <div class="drawer_handle" style="position:absolute;top:0px;width:100%;z-index:5">
+                        <div style="height:61px;width:100%"></div>
+                    </div>
+                    <div id="events_car_carousel">
+                       <div class="place_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/Museum.jpg" alt="">
+                            </div>                                                    
+                            <h2>1. American Museum of Natural History History </h2>
+                            <span class="cat_tag_mini">Favorites</span>
+                            <span class="cat_tag_mini">Musuem</span>                                          
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
+
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
+
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>                                                        
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>        
+                            <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">Website</a></li>
+                                <li><a href="#">Food Menu</a></li>
+                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>                                             
+                        </div>
+                       <div class="place_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/Columbus.jpg" alt="">
+                            </div>                                                    
+                            <h2>2. Columbus Circle </h2>
+                            <span class="cat_tag_mini">Favorites</span>
+                            <span class="cat_tag_mini">Shopping</span>                            
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
+                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
+
+                            </p>
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>  
+                            <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">Website</a></li>
+                                <li><a href="#">Food Menu</a></li>
+                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>                                                                            
+                       </div>
+
+                           
+                       <div class="place_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/atrium.jpg" alt="">
+                            </div>                                                    
+                            <h2>3. Lincoln Center </h2>
+                            <span class="cat_tag_mini">Favorites</span>
+                            <span class="cat_tag_mini">Musuem</span>                            
+                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
+                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
+
+                            </p>
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>  
+                            <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">Website</a></li>
+                                <li><a href="#">Food Menu</a></li>
+                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>                                                                            
+                       </div>
+                           
+                    </div>
+                    </div>   
+                    <!-- Slide wrapper ends  -->                   
+                </div>          
+
+
+ 
+           <!-- @StoryList Page  -->
+
+                <div title='Community Stories' id="storylist" data-tab="navbar_stories" class="panel featured_pg" >
+                    <ul class="list">
+                        <li>
+                            <a href="#stories">
+                            <div class="thumbnail_square">
+                                <img src="images/thumb_run.jpg" alt="">
+                            </div>                
+                            <div class="tag_home tag_story">    
+                                Stories
+                            </div>                                             
+                            <h2>The many dimensions of Bethesda Terraces</h2>
+                            <b>By Jeremy Klein</b>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ...</p>
+                            <div class="community_tag">
+                                <span class="cat_tag_mini">Local</span>
+                                <span class="cat_tag_mini">Visitors</span>
+                                <span class="cat_tag_mini">Dining</span>
+                            </div> 
+                            </a>                             
+                        </li>
+                        <li>
+                            <a href="#stories">
+                            <div class="thumbnail_square">
+                                <img src="images/thumb_run.jpg" alt="">
+                            </div>                
+                            <div class="tag_home tag_story">    
+                                Stories
+                            </div>                                             
+                            <h2>The many dimensions of Bethesda Terraces</h2>           <b>By Jeremy Klein</b>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... r</p>
+                            <div class="community_tag">
+                                <span class="cat_tag_mini">Visitors</span>
+                                <span class="cat_tag_mini">Dining</span>
+                            </div>   
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#stories">
+                            <div class="thumbnail_square">
+                                <img src="images/thumb_run.jpg" alt="">
+                         </div>                
+                            <div class="tag_home tag_story">    
+                                Stories
+                            </div>                                             
+                            <h2>The many dimensions of Bethesda Terraces</h2>
+                            <b>By Jeremy Klein</b>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... r</p>
+                            <div class="community_tag">
+                                <span class="cat_tag_mini">Local</span>
+                                <span class="cat_tag_mini">Visitors</span>
+                                
+                            </div>                               
+                            </a>                           
+                        </li>                                                
+                        <li>
+                            <a href="#stories">
+                            <div class="thumbnail_square">
+                                <img src="images/thumb_run.jpg" alt="">
+                            </div>                
+                            <div class="tag_home tag_story">    
+                                Stories
+                            </div>                                             
+                            <h2>The many dimensions of Bethesda Terraces</h2>
+                            <b>By Jeremy Klein</b>
+                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... r</p>
+                            <div class="community_tag">
+                                <span class="cat_tag_mini">Local</span>
+                                <span class="cat_tag_mini">Visitors</span>
+                                <span class="cat_tag_mini">Dining</span>
+                                <span class="cat_tag_mini">Visitors</span>
+                            </div>                               
+                            </a>                           
+                        </li>
+                        
+
+                    </ul>
+                
+                </div>                              
+
+
+
+            </div>  <!-- Content End Tag -->
+
+            <!-- Bottom @Navbar.  -->
+            <!-- Add additional tabs here -->
+
+            <div id="navbar">
+                <div class="horzRule"></div>
+                <a href="#main" data-transition="none" id='navbar_home' class='icon home'>Home</a>
+                <a href="#places" data-transition="none" id='navbar_places'>Places</a>
+                <a href="#events" data-transition="none" id='navbar_events'>Events</a>
+                <a href="#storylist" data-transition="none" id='navbar_stories'>Community</a>
+                <a href="#mypage" data-transition="none" id='navbar_mypage' class='icon user'>My GUP</a>
+            </div>
+
+            <!-- Nav Menu for Places Cateogories --> 
+
+            <nav id="side_nav_cat"> 
+                <div class='title'>
+                    <h2>Place Categories</h2>
+                </div>
+                <div class="side_nav">
+                    <ul class="list">
+                        <li class="cat_main" >Central Park</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                        
+                    </ul>                    
+                    <ul class="list">
+                        <li class="cat_main" >American Museum of Natural History</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                      
+                    </ul>                    
+                    <ul class="list">
+                        <li class="cat_main" >Columbus Circle</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                                                                               
+                    </ul>                    
+                    <ul class="list">
+                        <li class="cat_main" >Madison Avenue</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                            
+                    </ul>
+                    <ul class="list">
+                        <li class="cat_main" >West 86th - 96th St</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                        
+                    </ul>     
+                    <ul class="list">
+                        <li class="cat_main" >Upper East Side</li>                        
+        
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>
+                        <li class="cat_sec" ><a href="#">Playgrounds</a></li>
+                        <li class="cat_sec" ><a href="#">Points of Interest</a></li>
+                        <li class="cat_sec" ><a href="#">Bathrooms</a></li>                                          
+                    </ul>                                                                      
+                </div>
+            </nav>
+        </div>
+
+        <script>
+            // Slide Menu
+            // #############################################            
+            
+            $.ui.useOSThemes=false; //This must be set before $(document).ready() triggers;
+            $.ui.setSideMenuWidth("200px"); //Set to 200px wide;
+             
+            $.ui.ready(function(){
+                $.ui.setSideMenuWidth($("#afui").width()-50);//Set it to be full width - 50 pixels
+            });
+
+            $.ui.slideSideMenu = false; 
+            //When set to false, can not swipe to reveal
+            // fixedSideMenuWidth=800; 
+            //If the sidemenu is always shown, this will prevent it from being dragged
+
+            //Hides the back button
+            $.ui.showBackbutton=false
+
+
+            // Carousel
+            // #############################################    
+
+            var options={
+               vertical:false, // page up/down
+               horizontal:true, // page left/right
+               // pagingDiv:null, // div to hold the dots for paging
+               // pagingCssName:"carousel_paging", //classname for the paging dots
+               // pagingCssNameSelected: "carousel_paging_selected", //classname for the selected page dots
+               wrap:true //Creates a continuous carousel
+            }
+
+            var carousel = $("#events_car_carousel, #place_car").carousel(options);
+
+            // Scroller Place Detail
+            // #############################################    
+
+            var myScroller;
+            $.ui.ready(function () {
+                $("#events_car").scroller(); //Fetch the scroller from cache
+               // $(".place_dp").scroller();
+               $("#events_car").drawer({direction:"up"});
+            });     
+
+            
+
+            // Leaflet JS
+            // #############################################    
+
+            var map3; 
+
+            function loadmap_place(){
+                
+              if (map3 === undefined) {
+                map3 = L.map('map_place').setView([40.78486, -73.963036], 13);
+                L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
+                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                    maxZoom: 18
+                }).addTo(map3);                                
+                console.log("place map working")    
+              }    
+            }
+        </script>            
+    </body>
+</html>

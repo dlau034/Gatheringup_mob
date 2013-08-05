@@ -48,8 +48,8 @@ h2 {
 	background-color: #94BE54;
 }
 #afui #header h1 {
-	/*left: 50%!important;*/
-    /*margin-left: -100px!important;*/
+	font-weight: 500;
+    
 }
 .icon:before {
 	font-size: 1.7em!important;
@@ -59,19 +59,19 @@ h2 {
 #navbar_places {
 	background-image: url("../images/place_icon.png")!important;
 	background-repeat: no-repeat!important;
-	background-position-x: center!important;
+	background-position: center top!important;
 	background-size: 24px 28px!important;
 }
 #navbar_events {
 	background-image: url("../images/place_event.png")!important;
 	background-repeat: no-repeat!important;
-	background-position-x: center!important;
+	background-position: center top!important;
 	background-size: 24px 28px!important;
 }
 #navbar_stories {
 	background-image: url("../images/place_stories.png")!important;
 	background-repeat: no-repeat!important;
-	background-position-x: center!important;
+	background-position: center top!important;
 	background-size: 24px 28px!important;
 }
 
@@ -89,28 +89,30 @@ h2 {
 /* @Custom Header Buttons */
 /* ------------------------------------------ */
 
-.rightButton {
+.nav_icon {
 	position: relative;
 	top: 9px;
 	right: -8px;
 	height: 36px;
 	width: 36px;
-	z-index:2;
-	float:right;
-}
-.leftButton {
-	position: relative;
-	top: 9px;
-	right: -8px;
-	height: 36px;
-	width: 36px;
-	z-index:2;
-	float:left;
+	z-index: 2;
+	text-decoration: none;
 }
 
-.nav_bookmark_button img {
-	width:35px;
+
+
+.rightButton {
+
+	float:right!important;
 }
+.leftButton {
+
+	float:left!important;
+}
+
+/*.nav_bookmark_button img {
+	width:35px;
+}*/
 .settings {
 	color: white;
 }
@@ -368,6 +370,7 @@ h2 {
 	/*min-height: 350px!important;*/
 	/*max-height: 425px;*/
 	height: 425px!important;
+	float: left;
 }
 .place_dp h2 {
 	white-space: nowrap;
@@ -391,6 +394,37 @@ h2 {
 
 /* @Events Page */
 /* ------------------------------------------ */
+
+.drawer_handle {
+	height: 40px;
+	width: 100%;
+	background-color: orange;
+	
+	bottom: 0;
+	top: 0;
+	/*position: relative;*/
+	position: absolute;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+
+	color:black;
+
+	z-index: 1;
+
+	
+}
+#drawer {
+	position: relative;
+	
+	background-color: black;
+	z-index: 0;
+	margin-top: 100%;
+	height: 50%;
+	background-color: black;
+
+}
+
 .events_pg {
 	padding: 0!important;
 }
@@ -399,7 +433,8 @@ h2 {
 	padding: 0.5em 1em;
 	/*min-height: 350px!important;*/
 	/*max-height: 425px;*/
-	height: 425px!important;
+	/*height: 425px!important;*/
+	float: left;
 }
 .event_map {
 	height: 100%;	
@@ -407,7 +442,7 @@ h2 {
 #events_car {
 	height: auto!important;
 	position: absolute;
-	bottom: -26em;
+	
 	width: 100%;
 
 	overflow: visible!important;
@@ -416,11 +451,19 @@ h2 {
 	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
 	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
 	box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;	
+
+	margin-top: -65px;
 }
 
-#events_car > div {
-	height: auto!important;
-	min-height: 0!important;
+#events_car_carousel {
+overflow: visible!important;
+}
+
+#events_car .drawer_handle {
+	/*height: auto!important;
+	min-height: 0!important*/;
+	height: 10px;
+	background-color: red;
 }
 
 .event_dp h2 {
@@ -501,7 +544,7 @@ h2 {
 
 	text-decoration: none;
 }
-.button_bookmark a:active {
+.button_bookmark a:active, .button_bookmark a:focus {
 	background-color: red;
 }
 .bookmark_active {
