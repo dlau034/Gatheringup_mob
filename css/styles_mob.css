@@ -45,7 +45,7 @@ h2 {
 }
 #afui #navbar a.pressed {
 	border-radius: 4px;
-	background-color: #94BE54;
+	background-color: #95BD49;
 }
 #afui #header h1 {
 	font-weight: 500;
@@ -74,6 +74,23 @@ h2 {
 	background-position: center top!important;
 	background-size: 24px 28px!important;
 }
+.btn-bookmark {
+	;
+
+}
+.btn-large {
+
+}
+.button.green_G {
+	background-color: #95BD49!important;
+	color: white!important;
+	font-weight: 400!important;
+	border-radius: 3px!important;
+	border-color: #80A638!important;
+}
+
+
+
 
 /* Global @Leaflet Map Styling */
 /* ------------------------------------------ */
@@ -361,9 +378,9 @@ h2 {
 }
 .place_dp {
 	padding: 0.5em 1em;
-	/*min-height: 350px!important;*/
-	/*max-height: 425px;*/
-	height: 425px!important;
+	height: 325px!important;
+	position: relative;
+	display: block;
 	float: left;
 }
 .place_dp h2 {
@@ -373,19 +390,32 @@ h2 {
 	padding: 0!important;
 	font-weight: 400!important;
 }
-.place_dp p {
-	margin-top: 1em!important;
-}
 .place_dp .thumbnail_square {
-	/*margin-top: -26px;*/
-	margin-top: -2em;
 	width: 5em;
 	height: 5em;
+}
+.place_dp ul {
+	position: absolute;
+	bottom: 0;
+	width: 93%;
 }
 .place_dp .thumbnail_square img {
 	width: 100%;
 }
-
+.place_dp .center_detail {
+	clear: both;
+	margin-top: 0.5em;
+	display: block;
+	position: relative;
+	float: left;
+}
+.place_dp p {
+	/*margin-top: 2.2em!important;*/
+}
+.place_dp .btn-bookmark {
+	float: right;
+	margin-top: 12px!important;
+}
 /* @Events Page */
 /* ------------------------------------------ */
 
@@ -440,11 +470,7 @@ h2 {
 .event_dp ul {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
-}
-.event_dp ul li a{
-	margin: 0!important;
-	padding: 0!important; 
+	width: 93%;
 }
 .event_map {
 	height: 100%;	
@@ -462,11 +488,10 @@ h2 {
 	margin-top: 19px;
 	background-color: red;
 	top: 0;
-
 }
 
 #events_car_carousel {
-overflow: visible!important;
+	overflow: visible!important;
 }
 
 #events_car .drawer_handle {
@@ -500,6 +525,8 @@ overflow: visible!important;
 	display: block;
 	position: relative;
 }
+
+
 
 /* Side Menu Catogories - Places */
 /* ------------------------------------------ */
