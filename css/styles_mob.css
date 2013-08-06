@@ -437,6 +437,15 @@ h2 {
 	display: block;
 	float: left;
 }
+.event_dp ul {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.event_dp ul li a{
+	margin: 0!important;
+	padding: 0!important; 
+}
 .event_map {
 	height: 100%;	
 }
