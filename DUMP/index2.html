@@ -30,7 +30,7 @@
 <!-- Appframework Plugin JS -->
 
 <script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
-<script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>       
+<!-- <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>        -->
 <script type="text/javascript" charset="utf-8" src="js/af.drawer.js"></script>    
 
 <!-- Javascript Leaflet  -->
@@ -103,45 +103,44 @@
             <!-- @Places Page -->
                 
                 <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
-                    <div id="map_place" class="map_place"></div>  
 
-                   <div id="events_car" style="">
-                    <div class="drawer_handle" style="position:absolute;top:0px;width:100%;z-index:5">
-                        <div style="height:61px;width:100%"></div>
+                    <div id="map_place" class="map_place"></div>
+
+                    <div id="drawer">
+                        
+                    <div class="drawer_handle">
+                        <!-- PULL UP -->
+                        <div class="pull_line"></div>
+                        <div class="pull_line"></div>
+                        <div class="invisible_handle"></div>
                     </div>
-                    <div id="events_car_carousel">
-                       <div class="place_dp" style="background:#f9f9f9;">
+
+                    <div id="events_car">
+                    
+                       <div class="event_dp" style="background:#f9f9f9;">
                             <div class="thumbnail_square">
-                                <img src="images/Museum.jpg" alt="">
+                                <img src="images/event1.jpg" alt="">
                             </div>                                                    
-                            <h2>1. American Museum of Natural History History </h2>
-                            <span class="cat_tag_mini">Favorites</span>
-                            <span class="cat_tag_mini">Musuem</span>                                          
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
+                            <h2>1. Lincoln Center Out of Doors Presents Mark Dendy Dance & Theater Projects: Ritual Cyclical</h2>
+                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
 
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
-
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>                                                        
                             <p>(212) 769-5100<br>
                             Central Park West at 79th Street<br>
                             New York, NY 10024</p>        
                             <ul class="list inset">
                                 <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
+                                <li><a href="#">More Info</a></li>
                                 <li><a href="#">Food Menu</a></li>
                                 
                                 <li><a href="#">Share</a></li>                        
-                            </ul>                                             
+                            </ul>                                                
                         </div>
-                       <div class="place_dp" style="background:#f9f9f9;">
+                       <div class="event_dp" style="background:#f9f9f9;">
                             <div class="thumbnail_square">
-                                <img src="images/Columbus.jpg" alt="">
+                                <img src="images/event2.jpg" alt="">
                             </div>                                                    
-                            <h2>2. Columbus Circle </h2>
-                            <span class="cat_tag_mini">Favorites</span>
-                            <span class="cat_tag_mini">Shopping</span>                            
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
-                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
+                            <h2>2. BLEU VIOLIN: Love & Basketball...and KARAOKE </h2>
+                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
 
                             </p>
                             <p>(212) 769-5100<br>
@@ -149,7 +148,7 @@
                             New York, NY 10024</p>  
                             <ul class="list inset">
                                 <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
+                                <li><a href="#">More Info</a></li>
                                 <li><a href="#">Food Menu</a></li>
                                 
                                 <li><a href="#">Share</a></li>                        
@@ -157,118 +156,31 @@
                        </div>
 
                            
-                       <div class="place_dp" style="background:#f9f9f9;">
+                       <div class="event_dp" style="background:#f9f9f9;">
                             <div class="thumbnail_square">
-                                <img src="images/atrium.jpg" alt="">
+                                <img src="images/event3.jpg" alt="">
                             </div>                                                    
-                            <h2>3. Lincoln Center </h2>
-                            <span class="cat_tag_mini">Favorites</span>
-                            <span class="cat_tag_mini">Musuem</span>                            
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
-                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
-
-                            </p>
-                            <p>(212) 769-5100<br>
-                            Central Park West at 79th Street<br>
-                            New York, NY 10024</p>  
-                            <ul class="list inset">
-                                <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Food Menu</a></li>
-                                
-                                <li><a href="#">Share</a></li>                        
-                            </ul>                                                                            
-                       </div>
-                           
-                    </div>
-                    </div>   
-                    <!-- Slide wrapper ends  -->                   
-                </div>          
-
-
+                            <h2>3. Shape Up NYC: Yoga</h2>
+                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
  
-           <!-- @StoryList Page  -->
-
-                <div title='Community Stories' id="storylist" data-tab="navbar_stories" class="panel featured_pg" >
-                    <ul class="list">
-                        <li>
-                            <a href="#stories">
-                            <div class="thumbnail_square">
-                                <img src="images/thumb_run.jpg" alt="">
-                            </div>                
-                            <div class="tag_home tag_story">    
-                                Stories
-                            </div>                                             
-                            <h2>The many dimensions of Bethesda Terraces</h2>
-                            <b>By Jeremy Klein</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ...</p>
-                            <div class="community_tag">
-                                <span class="cat_tag_mini">Local</span>
-                                <span class="cat_tag_mini">Visitors</span>
-                                <span class="cat_tag_mini">Dining</span>
-                            </div> 
-                            </a>                             
-                        </li>
-                        <li>
-                            <a href="#stories">
-                            <div class="thumbnail_square">
-                                <img src="images/thumb_run.jpg" alt="">
-                            </div>                
-                            <div class="tag_home tag_story">    
-                                Stories
-                            </div>                                             
-                            <h2>The many dimensions of Bethesda Terraces</h2>           <b>By Jeremy Klein</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... r</p>
-                            <div class="community_tag">
-                                <span class="cat_tag_mini">Visitors</span>
-                                <span class="cat_tag_mini">Dining</span>
-                            </div>   
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#stories">
-                            <div class="thumbnail_square">
-                                <img src="images/thumb_run.jpg" alt="">
-                         </div>                
-                            <div class="tag_home tag_story">    
-                                Stories
-                            </div>                                             
-                            <h2>The many dimensions of Bethesda Terraces</h2>
-                            <b>By Jeremy Klein</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... r</p>
-                            <div class="community_tag">
-                                <span class="cat_tag_mini">Local</span>
-                                <span class="cat_tag_mini">Visitors</span>
+                            </p>
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>  
+                            <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">More Info</a></li>
+                                <li><a href="#">Food Menu</a></li>
                                 
-                            </div>                               
-                            </a>                           
-                        </li>                                                
-                        <li>
-                            <a href="#stories">
-                            <div class="thumbnail_square">
-                                <img src="images/thumb_run.jpg" alt="">
-                            </div>                
-                            <div class="tag_home tag_story">    
-                                Stories
-                            </div>                                             
-                            <h2>The many dimensions of Bethesda Terraces</h2>
-                            <b>By Jeremy Klein</b>
-                            <p>My normal route is around the south side loop of the park, between 59th and 72nd street, Timur explained, sitting in his own carriage, waiting as his fare took in the view from Cherry Hill. I can normal route is around the south side loop of the park ... r</p>
-                            <div class="community_tag">
-                                <span class="cat_tag_mini">Local</span>
-                                <span class="cat_tag_mini">Visitors</span>
-                                <span class="cat_tag_mini">Dining</span>
-                                <span class="cat_tag_mini">Visitors</span>
-                            </div>                               
-                            </a>                           
-                        </li>
+                                <li><a href="#">Share</a></li>                        
+                            </ul>                                                                            
+                       </div>
                         
+                    </div>   <!-- end of event_car -->
 
-                    </ul>
-                
-                </div>                              
-
-
+                    </div>   <!-- end of drawer container -->
+                    
+                </div> <!-- end of place panel -->
 
             </div>  <!-- Content End Tag -->
 
@@ -378,18 +290,24 @@
                wrap:true //Creates a continuous carousel
             }
 
-            var carousel = $("#events_car_carousel, #place_car").carousel(options);
+            var carousel = $("#events_car, #place_car").carousel(options);
 
             // Scroller Place Detail
             // #############################################    
 
             var myScroller;
             $.ui.ready(function () {
-                $("#events_car").scroller(); //Fetch the scroller from cache
+                // $("#events_car").scroller(); //Fetch the scroller from cache
                // $(".place_dp").scroller();
-               $("#events_car").drawer({direction:"up"});
+                // $("#events_car").drawer({direction:"up"});
+                $("#drawer").drawer({direction:"up"})
+
             });     
 
+            // $(".place_pg").swipe(function(){
+            //     $(".drawer_handle").hide();
+            //     console.log("testing")
+            // });
             
 
             // Leaflet JS
@@ -404,9 +322,23 @@
                 L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
                     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
                     maxZoom: 18
-                }).addTo(map3);                                
+                }).addTo(map3);      
+
+            var myIcon = L.icon({
+                iconUrl: 'http://siteimages.gatheringup.com/mapsicon/1.png',
+                iconSize: [47, 47],
+                iconAnchor: [23, 47],
+                popupAnchor: [0, -47]
+            });
+
+            var marker = L.marker([40.78486, -73.963036],{icon: myIcon}).addTo(map3);
+
+            marker.on('click', function(e) {
+                map.setZoom(14);
+            });
+
                 console.log("place map working")    
-              }    
+              }        
             }
         </script>            
     </body>

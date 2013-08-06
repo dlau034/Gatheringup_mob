@@ -39,7 +39,7 @@ h2 {
 .list li a:after {
 	right: 20px!important;
 }
-#defaultNav a.pressed {
+@#defaultNav a.pressed {
 	background-color: #7AC943!important;
 	color: white!important;
 }
@@ -98,6 +98,9 @@ h2 {
 	z-index: 2;
 	text-decoration: none;
 }
+
+
+
 .rightButton {
 
 	float:right!important;
@@ -106,6 +109,10 @@ h2 {
 
 	float:left!important;
 }
+
+/*.nav_bookmark_button img {
+	width:35px;
+}*/
 .settings {
 	color: white;
 }
@@ -284,8 +291,7 @@ h2 {
 }
 .map_place {
 	height: 100%;
-	position: fixed;
-	width: 100%;
+	/*position: fixed;*/
 }
 
 /* Pull Tab */
@@ -390,40 +396,38 @@ h2 {
 /* ------------------------------------------ */
 
 .drawer_handle {
-	height: 20px;
+	height: 40px;
 	width: 100%;
 	background-color: orange;
-	padding-top: 1px;
 	
+	bottom: 0;
 	top: 0;
+	
 	position: absolute;
-	text-align: center;	
-	z-index: 1;
-
-	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
-	 -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
-	 box-shadow: 0px 0px 4px rgba(0,0,0,0.4); 
-}
-.invisible_handle {
-	height: 80px;
-	color:black;
+	text-align: center;
 	line-height: 30px;
-	font-size: 14px;	
-	/*background-color: rgba(0,0,0,0.5); /* Show hit zone */
-	margin-top: -45px;
+	font-size: 14px;
+
+	color:black;
+
+	margin-top: -40px;
+
+	/*z-index: 1;*/
+}
+.drawer_handle > div {
+	/*height: 30px; */
+	width:100%;
+	height: 100%;
+	background-color: red;
 }
 #drawer {
 	position: relative;
+	
+	background-color: black;
 	z-index: 0;
-	margin-top: 94%; /* amount handle and details module will offset from the top */
-	height: 250px;  /* amount of that the drawer will pull up*/
-}
-.drawer_handle .pull_line {
-	width: 15%;
-	background-color: white;
-	height: 3px;
-	margin: 0 auto;
-	margin-top: 4px;
+	margin-top: 100%;
+	height: 50%;
+	background-color: black;
 }
 
 .events_pg {
@@ -432,28 +436,28 @@ h2 {
 
 .event_dp {
 	padding: 0.5em 1em;
-	height: 325px!important;
-	position: relative;
-	display: block;
+	/*min-height: 350px!important;*/
+	/*max-height: 425px;*/
+	/*height: 425px!important;*/
 	float: left;
 }
 .event_map {
 	height: 100%;	
 }
 #events_car {
-	height: 26em;
-	position: absolute;	
+	height: auto!important;
+	position: absolute;
+	
 	width: 100%;
+
 	overflow: visible!important;
+
 	border-top: 2px solid white;
 	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
 	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;
 	box-shadow: 0px 0px 8px rgba(0,0,0,0.2),inset 0px 1px 0px white;	
 
-	margin-top: 19px;
-	background-color: red;
-	top: 0;
-
+	margin-top: -65px;
 }
 
 #events_car_carousel {
@@ -461,8 +465,10 @@ overflow: visible!important;
 }
 
 #events_car .drawer_handle {
-	height: 10px;
-	background-color: red;
+	/*height: auto!important;
+	min-height: 0!important*/;
+	/*height: 10px;*/
+	
 }
 
 .event_dp h2 {
@@ -479,19 +485,14 @@ overflow: visible!important;
 	margin-top: 1em!important;
 }
 .event_dp .thumbnail_square {
-	
+	/*margin-top: -26px;*/
+	margin-top: -2em;
 	width: 5em;
 	height: 5em;
 }
 .event_dp .thumbnail_square img {
 	width: 100%;
 }
-.top_detail {
-	margin-top: 10px;
-	display: block;
-	position: relative;
-}
-
 /* Side Menu Catogories - Places */
 /* ------------------------------------------ */
 

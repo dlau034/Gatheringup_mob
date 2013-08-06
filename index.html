@@ -38,6 +38,7 @@
 
 <script type="text/javascript" charset="utf-8" src="af_plugins/af-carousel/af.carousel.js"></script>       
 <script type="text/javascript" charset="utf-8" src="js/plugins/af.scroller.js"></script>       
+<script type="text/javascript" charset="utf-8" src="js/af.drawer.js"></script> 
 
 <!-- Uncomment to activate the swipe slide for side nav (need to call function) -->
 <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu2.js"></script>       
@@ -243,20 +244,12 @@
             
             <!-- @Places Page -->
                 
-                <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
+<!--                 <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
                     
-                    <!-- <a class="tab_place" onclick="$.ui.toggleSideMenu()"></a> -->
                     <div class="tab_place"></div>
                     <div id="map_place" class="map_place"></div>  
 
-                        // <script>
-                        //     var myScroller;
-                        // $.ui.ready(function () {
-                        //     $("#events_car").scroller(); //Fetch the scroller from cache
-                        // });     
-
-                        // </script>
-
+ 
                    <div id="events_car" style="">
                     
                        <div class="place_dp" style="background:#f9f9f9;">
@@ -266,21 +259,11 @@
                             <h2>1. American Museum of Natural History History </h2>
                             <span class="cat_tag_mini">Favorites</span>
                             <span class="cat_tag_mini">Musuem</span>                            
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
-
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
-
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>                                                        
+                                                        
                             <p>(212) 769-5100<br>
                             Central Park West at 79th Street<br>
                             New York, NY 10024</p>        
-<!--                             <ul class="list inset">
-                                <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Food Menu</a></li>
-                                
-                                <li><a href="#">Share</a></li>                        
-                            </ul>     -->                                            
+                                            
                         </div>
                        <div class="place_dp" style="background:#f9f9f9;">
                             <div class="thumbnail_square">
@@ -289,20 +272,11 @@
                             <h2>2. Columbus Circle </h2>
                             <span class="cat_tag_mini">Favorites</span>
                             <span class="cat_tag_mini">Shopping</span>                            
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
-                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
 
-                            </p>
                             <p>(212) 769-5100<br>
                             Central Park West at 79th Street<br>
                             New York, NY 10024</p>  
-     <!--                        <ul class="list inset">
-                                <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Food Menu</a></li>
-                                
-                                <li><a href="#">Share</a></li>                        
-                            </ul>        -->                                                                     
+                                                                   
                        </div>
 
                            
@@ -313,26 +287,109 @@
                             <h2>3. Lincoln Center </h2>
                             <span class="cat_tag_mini">Favorites</span>
                             <span class="cat_tag_mini">Musuem</span>                            
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
-                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
 
-                            </p>
                             <p>(212) 769-5100<br>
                             Central Park West at 79th Street<br>
                             New York, NY 10024</p>  
-<!--                             <ul class="list inset">
-                                <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Food Menu</a></li>
-                                
-                                <li><a href="#">Share</a></li>                        
-                            </ul>       -->                                                                      
+                                                             
                        </div>
                            
        
                     </div>   
-                    <!-- Slide wrapper ends  -->                   
-                </div>          
+                    
+                </div>       -->    
+
+
+                <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
+
+                    <div id="map_place" class="map_place"></div>
+
+                    <div id="drawer">
+                        
+                    <div class="drawer_handle">
+                        <!-- PULL UP -->
+                        <div class="pull_line"></div>
+                        <div class="pull_line"></div>
+                        <div class="invisible_handle"></div>
+                    </div>
+
+                    <div id="events_car">
+                    
+                       <div class="event_dp" style="background:#f9f9f9;">
+                           <div class="thumbnail_square">
+                                <img src="images/Museum.jpg" alt="">
+                            </div>                      
+
+                            <div class="top_detail">
+                                <h2>1. American Museum of Natural History History </h2>
+                                <span class="cat_tag_mini">Favorites</span>
+                                <span class="cat_tag_mini">Musuem</span>                            
+                            </div>
+                                                        
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>                 
+
+                            <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">More Info</a></li>
+                                <li><a href="#">Food Menu</a></li>                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>                               
+
+                        </div>
+                       <div class="event_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/Columbus.jpg" alt="">
+                            </div>                                  
+                            
+                            <div class="top_detail">
+                                <h2>2. Columbus Circle </h2>
+                                <span class="cat_tag_mini">Favorites</span>
+                                <span class="cat_tag_mini">Shopping</span>                            
+                            </div>
+
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>  
+                            <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">More Info</a></li>
+                                <li><a href="#">Food Menu</a></li>                                
+                                <li><a href="#">Share</a></li>                        
+                            </ul>                                                                            
+                       </div>
+
+                           
+                       <div class="event_dp" style="background:#f9f9f9;">
+                            <div class="thumbnail_square">
+                                <img src="images/atrium.jpg" alt="">
+                            </div>        
+
+                            <div class="top_detail">
+                                <h2>3. Lincoln Center </h2>
+                                <span class="cat_tag_mini">Favorites</span>
+                                <span class="cat_tag_mini">Musuem</span>                            
+                            </div>                                            
+                            
+
+                            <p>(212) 769-5100<br>
+                            Central Park West at 79th Street<br>
+                            New York, NY 10024</p>  
+                            <ul class="list inset">
+                                <li><a href="#">What's Nearby</a></li>
+                                <li><a href="#">More Info</a></li>
+                                <li><a href="#">Food Menu</a></li> 
+                                <li><a href="#">Share</a></li>                        
+                            </ul>                                                                            
+                       </div>
+                        
+                    </div>   <!-- end of event_car -->
+
+                    </div>   <!-- end of drawer container -->
+                    
+                </div> <!-- end of place panel -->
+
 
             <!-- @Events Page  -->
 

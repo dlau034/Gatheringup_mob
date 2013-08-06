@@ -81,14 +81,27 @@ var map3;
 function loadmap_place(){
     
   if (map3 === undefined) {
-    
     map3 = L.map('map_place').setView([40.78486, -73.963036], 13);
     L.tileLayer('http://{s}.tile.cloudmade.com/b33ed4828e694c8eb411b09577f89072/997/256/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
         maxZoom: 18
-    }).addTo(map3);                                
+    }).addTo(map3);      
+
+var myIcon = L.icon({
+    iconUrl: 'http://siteimages.gatheringup.com/mapsicon/1.png',
+    iconSize: [47, 47],
+    iconAnchor: [23, 47],
+    popupAnchor: [0, -47]
+});
+
+var marker = L.marker([40.78486, -73.963036],{icon: myIcon}).addTo(map3);
+
+marker.on('click', function(e) {
+    map.setZoom(14);
+});
+
     console.log("place map working")    
-  }    
+  }        
 }
 
 var map1
@@ -149,8 +162,12 @@ function loadmap_bookmark(){
 // var tab = ;
 
 $(".tab_place").swipe(function(){
-  
   console.log("is being clicked!")
     slidemenu();
 });
 
+
+$.ui.ready(function () {
+    $("#drawer").drawer({direction:"up"})
+
+});     

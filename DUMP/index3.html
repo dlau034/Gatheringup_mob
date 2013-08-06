@@ -14,7 +14,7 @@
 <!-- Custom CSS -->
 
 <link rel="stylesheet" href="css/leaflet.css" />
-<link rel="stylesheet" type="text/css" href="css/styles_mob.css" title="default" />
+<link rel="stylesheet" type="text/css" href="css/styles_mob_test.css" title="default" />
 
 <!-- Google Fonts -->
 
@@ -103,103 +103,13 @@
             <!-- @Places Page -->
                 
                 <div title='Places' id="places" class="panel place_pg" style="overflow:hidden" data-tab="navbar_places" data-load="loadmap_place" data-nav="side_nav_cat">
-                    <!-- <div id="map_place" class="map_place"></div> -->
+                    <div id="map_place" class="map_place"></div>  
 
-                    <div id="drawer">
-                        
-                    <div class="drawer_handle">
-                        <div class="text_handle">PULL UP</div>
+                   <div id="events_car" style="">
+                    <div class="drawer_handle" style="position:absolute;top:0px;width:100%;z-index:5">
+                        <div></div>
                     </div>
-
-                    <div id="events_car">
-                    
-                       <div class="event_dp" style="background:#f9f9f9;">
-                            <div class="thumbnail_square">
-                                <img src="images/event1.jpg" alt="">
-                            </div>                                                    
-                            <h2>1. Lincoln Center Out of Doors Presents Mark Dendy Dance & Theater Projects: Ritual Cyclical</h2>
-                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? </p>
-                            <p>(212) 769-5100<br>
-                            Central Park West at 79th Street<br>
-                            New York, NY 10024</p>        
-<!--                             <ul class="list inset">
-                                <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Food Menu</a></li>
-                                
-                                <li><a href="#">Share</a></li>                        
-                            </ul>     -->                                            
-                        </div>
-                       <div class="event_dp" style="background:#f9f9f9;">
-                            <div class="thumbnail_square">
-                                <img src="images/event2.jpg" alt="">
-                            </div>                                                    
-                            <h2>2. BLEU VIOLIN: Love & Basketball...and KARAOKE </h2>
-                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
-                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
-
-                            </p>
-                            <p>(212) 769-5100<br>
-                            Central Park West at 79th Street<br>
-                            New York, NY 10024</p>  
-     <!--                        <ul class="list inset">
-                                <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Food Menu</a></li>
-                                
-                                <li><a href="#">Share</a></li>                        
-                            </ul>        -->                                                                     
-                       </div>
-
-                           
-                       <div class="event_dp" style="background:#f9f9f9;">
-                            <div class="thumbnail_square">
-                                <img src="images/event3.jpg" alt="">
-                            </div>                                                    
-                            <h2>3. Shape Up NYC: Yoga</h2>
-                            <h5>Monday - June 24, 2013 at 6:30 PM </h5> 
-                            <p>The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse architecto ducimus quam perferendis porro dolorem a quas nostrum totam expedita aperiam nam aspernatur? 
-                            The Shops at Columbus Circle is an urban shopping mall in the Time Warner Center in Manhattan. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, impedit, magni, nobis sunt officiis ipsum esse.                         
-
-                            </p>
-                            <p>(212) 769-5100<br>
-                            Central Park West at 79th Street<br>
-                            New York, NY 10024</p>  
-<!--                             <ul class="list inset">
-                                <li><a href="#">What's Nearby</a></li>
-                                <li><a href="#">Website</a></li>
-                                <li><a href="#">Food Menu</a></li>
-                                
-                                <li><a href="#">Share</a></li>                        
-                            </ul>       -->                                                                      
-                       </div>
-                           
-       
-                    </div>  
-
-
-
-
-
-                        
-
-                    </div>                    
-
-                    
-
-
-
-                    <script>
-                        // var drawer = new jq.drawer("drawer",{direction:"down"});
-                        $("#drawer").drawer({direction:"up"})
-                    </script>
-                   <!-- <div id="events_car" style="background-color:blue;height:300px;"> -->
-   <!--                  <div class="drawer_handle" style="position:absolute;top:0px;width:100%;z-index:5;background-color:red;">
-                        <div style="height:61px;width:100%"></div>
-                    </div> -->
-<!--                     <div id="events_car_carousel">
+                    <div id="events_car_carousel">
                        <div class="place_dp" style="background:#f9f9f9;">
                             <div class="thumbnail_square">
                                 <img src="images/Museum.jpg" alt="">
@@ -270,15 +180,15 @@
                             </ul>                                                                            
                        </div>
                            
-                    </div> -->
-                    <!-- </div>    -->
+                    </div>
+                    </div>   
                     <!-- Slide wrapper ends  -->                   
                 </div>          
 
 
  
            <!-- @StoryList Page  -->
-<!-- 
+
                 <div title='Community Stories' id="storylist" data-tab="navbar_stories" class="panel featured_pg" >
                     <ul class="list">
                         <li>
@@ -356,7 +266,7 @@
 
                     </ul>
                 
-                </div>     -->                          
+                </div>                              
 
 
 
@@ -468,16 +378,16 @@
                wrap:true //Creates a continuous carousel
             }
 
-            var carousel = $("#events_car, #place_car").carousel(options);
+            var carousel = $("#events_car_carousel, #place_car").carousel(options);
 
             // Scroller Place Detail
             // #############################################    
 
             var myScroller;
             $.ui.ready(function () {
-                // $("#events_car").scroller(); //Fetch the scroller from cache
+                $("#events_car").scroller(); //Fetch the scroller from cache
                // $(".place_dp").scroller();
-                // $("#events_car").drawer({direction:"up"});
+               $("#events_car").drawer({direction:"up"});
             });     
 
             
